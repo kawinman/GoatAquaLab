@@ -11,12 +11,12 @@
     <!-- Chosen Palette: G.O.A.T Aqua Lab Series (Blue, Green, Amber) -->
     <!-- Application Structure Plan: A single-page, scrolling "brand story" architecture. It starts with a strong hero visual, introduces the 3-step system, allows users to deep-dive into each product, explains the science behind the brand, and finishes with real-world proof (showcase). This narrative flow is more engaging and persuasive than a static report, guiding the user from interest to trust. -->
     <!-- Visualization & Content Choices: 
-        - Product System -> Goal: Compare/Inform -> Method: A 3-column Tailwind CSS grid with interactive cards. Hover effects provide subtle feedback. Clicking reveals more details.
-        - Bottle Visuals -> Goal: Visualize Product -> Method: Styled HTML/CSS divs to create a "2.5D" representation of each product bottle, color-coded for brand consistency. This is more performant than a full 3D scene.
-        - The Science Section -> Goal: Educate/Build Trust -> Method: Accordion-style layout using JS to reveal information on demand, keeping the UI clean.
-        - Showcase Gallery -> Goal: Provide Proof -> Method: A responsive image gallery using Tailwind Grid.
-        - All other text -> Goal: Inform -> Method: Styled HTML text blocks.
-        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+         - Product System -> Goal: Compare/Inform -> Method: A 3-column Tailwind CSS grid with interactive cards. Hover effects provide subtle feedback. Clicking reveals more details.
+         - Bottle Visuals -> Goal: Visualize Product -> Method: Styled HTML/CSS divs to create a "2.5D" representation of each product bottle, color-coded for brand consistency. This is more performant than a full 3D scene.
+         - The Science Section -> Goal: Educate/Build Trust -> Method: Accordion-style layout using JS to reveal information on demand, keeping the UI clean.
+         - Showcase Gallery -> Goal: Provide Proof -> Method: A responsive image gallery using Tailwind Grid.
+         - All other text -> Goal: Inform -> Method: Styled HTML text blocks.
+         - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
     -->
     <style>
         body {
@@ -109,6 +109,30 @@
             overflow: hidden;
             transition: max-height 0.5s ease, padding 0.5s ease;
         }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            aspect-ratio: 16 / 9;
+        }
+        .slideshow-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slideshow-image.active {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -191,12 +215,19 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800">Real World Results</h2>
                 <p class="text-lg text-slate-500 mt-2">ผลลัพธ์จริงจากตู้ของผู้ก่อตั้ง</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <div class="rounded-lg overflow-hidden shadow-xl">
-                    <img src="https://storage.googleapis.com/gemini-prod-us-west4-f2-public/scape/showcase_1.jpg" alt="ตู้ไม้น้ำที่สมบูรณ์" class="w-full h-full object-cover">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <!-- Slideshow 1 -->
+                <div class="slideshow-container">
+                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.JPG" alt="Showcase Image 1" class="slideshow-image active">
+                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4300.jpeg" alt="Showcase Image 2" class="slideshow-image">
+                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4301.jpeg" alt="Showcase Image 3" class="slideshow-image">
+                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4398.jpeg" alt="Showcase Image 4" class="slideshow-image">
                 </div>
-                 <div class="rounded-lg overflow-hidden shadow-xl">
-                    <img src="https://storage.googleapis.com/gemini-prod-us-west4-f2-public/scape/showcase_2.jpg" alt="ตู้ทดลองที่กำลังเติบโต" class="w-full h-full object-cover">
+                <!-- Slideshow 2 -->
+                <div class="slideshow-container">
+                    <img src="https://storage.googleapis.com/gemini-prod-us-west4-f2-public/scape/showcase_2.jpg" alt="ตู้ทดลองที่กำลังเติบโต" class="slideshow-image active">
+                     <img src="https://placehold.co/800x450/22c55e/ffffff?text=Your+Image+Here" alt="Placeholder for slideshow 2" class="slideshow-image">
+                    <!-- Add more <img> tags here for more slides in the second slideshow -->
                 </div>
             </div>
              <p class="text-center mt-8 text-slate-600">"เราทดสอบและใช้งานผลิตภัณฑ์ของเรากับตู้จริงทุกวัน เพื่อให้มั่นใจว่าคุณจะได้รับผลลัพธ์ที่ดีที่สุด"</p>
@@ -209,6 +240,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Accordion Logic
             const accordionContainer = document.getElementById('accordion-container');
             const scienceData = [
                 {
@@ -229,52 +261,58 @@
                 }
             ];
 
-            scienceData.forEach(item => {
-                const itemEl = document.createElement('div');
-                itemEl.className = 'bg-white rounded-lg shadow-sm border border-slate-200';
-                itemEl.innerHTML = `
-                    <div class="accordion-header flex justify-between items-center p-5">
-                        <h4 class="font-semibold text-slate-700">${item.title}</h4>
-                        <span class="text-slate-400 transition-transform transform">▼</span>
-                    </div>
-                    <div class="accordion-content px-5">
-                        <p class="text-slate-600 pb-5">${item.content}</p>
-                    </div>
-                `;
-                accordionContainer.appendChild(itemEl);
-            });
-
-            accordionContainer.addEventListener('click', e => {
-                const header = e.target.closest('.accordion-header');
-                if (!header) return;
-
-                const content = header.nextElementSibling;
-                const icon = header.querySelector('span');
-
-                const allContents = accordionContainer.querySelectorAll('.accordion-content');
-                const allIcons = accordionContainer.querySelectorAll('.accordion-header span');
-
-                // Close all other items
-                allContents.forEach((c, i) => {
-                    if (c !== content) {
-                        c.style.maxHeight = null;
-                        c.style.paddingTop = '0px';
-                        c.style.paddingBottom = '0px';
-                        allIcons[i].style.transform = 'rotate(0deg)';
-                    }
+            if (accordionContainer) {
+                scienceData.forEach(item => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'bg-white rounded-lg shadow-sm border border-slate-200';
+                    itemEl.innerHTML = `
+                        <div class="accordion-header flex justify-between items-center p-5">
+                            <h4 class="font-semibold text-slate-700">${item.title}</h4>
+                            <span class="text-slate-400 transition-transform transform">▼</span>
+                        </div>
+                        <div class="accordion-content px-5">
+                            <p class="text-slate-600 pb-5">${item.content}</p>
+                        </div>
+                    `;
+                    accordionContainer.appendChild(itemEl);
                 });
 
-                // Toggle the clicked item
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                    content.style.paddingTop = '0px';
-                    content.style.paddingBottom = '0px';
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    content.style.paddingTop = '0rem';
-                    content.style.paddingBottom = '1.25rem';
-                    icon.style.transform = 'rotate(180deg)';
+                accordionContainer.addEventListener('click', e => {
+                    const header = e.target.closest('.accordion-header');
+                    if (!header) return;
+
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('span');
+                    const isActive = content.style.maxHeight;
+
+                    // Close all other items before opening the new one
+                    accordionContainer.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                    accordionContainer.querySelectorAll('.accordion-header span').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                    // Toggle the clicked item
+                    if (!isActive) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            }
+
+            // --- Slideshow Logic ---
+            // Select all slideshow containers
+            const slideshows = document.querySelectorAll('.slideshow-container');
+
+            // Initialize each slideshow independently
+            slideshows.forEach(slideshow => {
+                const slides = slideshow.querySelectorAll('.slideshow-image');
+                let currentSlide = 0;
+
+                // Only start the slideshow if there is more than one image
+                if (slides.length > 1) {
+                    setInterval(() => {
+                        slides[currentSlide].classList.remove('active');
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].classList.add('active');
+                    }, 4000); // Change image every 4 seconds
                 }
             });
         });
