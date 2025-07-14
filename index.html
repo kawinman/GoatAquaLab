@@ -30,7 +30,7 @@
         }
         .g1-card:hover { border-color: #3b82f6; }
         .g2-card:hover { border-color: #22c55e; }
-        .g3-card:hover { border-color: #f59e0b; }
+        .g3-card:hover { border-color: #fbbf24; }
 
         .bottle-mockup {
             width: 100px;
@@ -89,7 +89,10 @@
         }
         .g1-color { color: #3b82f6; }
         .g2-color { color: #22c55e; }
-        .g3-color { color: #f59e0b; }
+        .g3-color { color: #fbbf24; }
+        .c-plus-color { color: #64748b; }
+        .alclean-color { color: #f59e0b; }
+        .coming-soon-color { color: #9ca3af; }
 
         .accordion-header {
             cursor: pointer;
@@ -152,7 +155,7 @@
             <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
                 <div class="relative">
                     <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2"></div>
-                    <div class="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2" style="background: linear-gradient(to right, #3b82f6, #22c55e, #f59e0b);"></div>
+                    <div class="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2" style="background: linear-gradient(to right, #3b82f6, #22c55e, #fbbf24);"></div>
                     <div class="relative flex justify-between">
                         <div class="text-center w-1/3">
                             <div class="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G1</div>
@@ -165,8 +168,8 @@
                             <p class="text-xs text-slate-500">3-12 เดือน</p>
                         </div>
                          <div class="text-center w-1/3">
-                            <div class="w-14 h-14 rounded-full bg-amber-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G3</div>
-                            <h3 class="mt-2 font-bold text-amber-600">Maintenance</h3>
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G3</div>
+                            <h3 class="mt-2 font-bold text-amber-500">Maintenance</h3>
                             <p class="text-xs text-slate-500">12+ เดือน</p>
                         </div>
                     </div>
@@ -180,7 +183,7 @@
                         <h4 class="font-semibold">G2 Active</h4>
                         <p class="text-sm text-slate-600 mt-1">อาหารมื้อหลักที่ครบถ้วน (NPK + Micro) สำหรับช่วงเร่งโตเต็มที่ เพิ่มความหนาแน่นและขับสีสันให้สดใส</p>
                     </div>
-                    <div class="border-t-4 border-amber-500 pt-4">
+                    <div class="border-t-4 border-amber-400 pt-4">
                         <h4 class="font-semibold">G3 Sustain</h4>
                         <p class="text-sm text-slate-600 mt-1">สูตรดูแลระยะยาวที่ชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสุขภาพและสีสันของตู้ที่สมบูรณ์แล้ว</p>
                     </div>
@@ -234,11 +237,65 @@
                                 <p class="bottle-label-formula g3-color">Sustain</p>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-orange-500 mt-6">G3 Sustain</h3>
-                        <p class="font-semibold text-orange-400">Maintenance Formula</p>
+                        <h3 class="text-2xl font-bold text-amber-500 mt-6">G3 Sustain</h3>
+                        <p class="font-semibold text-amber-400">Maintenance Formula</p>
                         <p class="text-sm text-slate-600 mt-4">สำหรับตู้ที่สมบูรณ์แล้ว (12+ เดือน) สูตร Lean Dosing ที่ช่วยชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสีสันและความสมบูรณ์ไว้</p>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Products Section -->
+    <section id="other-products" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <header class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">ผลิตภัณฑ์อื่นๆ ในระบบ</h2>
+                <p class="text-lg text-slate-500 mt-2">เสริมความสมบูรณ์แบบให้ตู้ของคุณ</p>
+            </header>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow">
+                    <div class="bottle-mockup mb-4">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name c-plus-color" style="font-size: 1rem;">Carbon+</p>
+                            
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">Carbon+</h3>
+                    <p class="text-sm text-slate-500 mt-2">คาร์บอนน้ำคุณภาพสูง ช่วยเสริมการสังเคราะห์แสงและยับยั้งตะไคร่</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow">
+                    <div class="bottle-mockup mb-4">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name alclean-color" style="font-size: 1rem;">AlClean</p>
+                           
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">AlClean</h3>
+                    <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์กำจัดตะไคร่อย่างเร่งด่วน (กำลังทดสอบ)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow">
+                    <div class="bottle-mockup mb-4 opacity-50">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name coming-soon-color">?</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">เร็วๆ นี้</h3>
+                    <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์ใหม่กำลังจะมา</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow">
+                    <div class="bottle-mockup mb-4 opacity-50">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name coming-soon-color">?</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">เร็วๆ นี้</h3>
+                    <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์ใหม่กำลังจะมา</p>
+                </div>
             </div>
         </div>
     </section>
@@ -247,15 +304,15 @@
     <section id="market-analysis" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6">
              <header class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">การวิเคราะห์ตลาด</h2>
-                <p class="text-lg text-slate-500 mt-2">เปรียบเทียบจุดยืนของ G1 Bright กับชุดเริ่มต้นของคู่แข่งในตลาด</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">การเปรียบเทียบกับแบรนด์อื่นๆ</h2>
+                <p class="text-lg text-slate-500 mt-2">เปรียบเทียบจุดยืนของ G1 Bright กับชุดเริ่มต้นของแบรนด์อื่นๆในตลาด</p>
             </header>
              <div class="bg-white p-6 rounded-xl">
                 <h3 class="text-lg font-bold mb-4 text-center">เปรียบเทียบ "จำนวนขวดที่ต้องซื้อ" สำหรับตู้เริ่มต้น</h3>
                 <div class="chart-container">
                     <canvas id="bottleComparisonChart"></canvas>
                 </div>
-                <p class="text-center text-sm text-slate-600 mt-4">G1 Bright คือโซลูชัน **ขวดเดียวจบ** ที่ให้ผลลัพธ์เทียบเท่ากับระบบที่ซับซ้อนและต้องซื้อหลายขวดของคู่แข่ง</p>
+                <p class="text-center text-sm text-slate-600 mt-4">G1 G2 G3 คือโซลูชัน **ขวดเดียวจบ** ที่ให้ผลลัพธ์เทียบเท่ากับระบบที่ซับซ้อนและต้องซื้อหลายขวดของแบรนด์อื่นๆ</p>
              </div>
         </div>
     </section>
@@ -265,7 +322,7 @@
         <div class="container mx-auto px-6">
             <header class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800">The Science Behind G.O.A.T.</h2>
-                <p class="text-lg text-slate-500 mt-2">ปรัชญาและหลักการที่ทำให้ผลิตภัณฑ์ของเราแตกต่าง</p>
+                <p class="text-lg text-slate-500 mt-2">เราแตกต่่างจากผลิตภัณฑ์อื่นๆอย่างไร</p>
             </header>
             <div class="max-w-3xl mx-auto space-y-4" id="accordion-container">
             </div>
@@ -277,19 +334,25 @@
         <div class="container mx-auto px-6">
              <header class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800">Real World Results</h2>
-                <p class="text-lg text-slate-500 mt-2">ผลลัพธ์จริงจากตู้ของผู้ก่อตั้ง</p>
+                <p class="text-lg text-slate-500 mt-2">ผลลัพธ์จริงจากตู้ของเรา</p>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div class="slideshow-container">
-                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.JPG" alt="Showcase Image 1" class="slideshow-image active">
-                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4300.jpeg" alt="Showcase Image 2" class="slideshow-image">
-                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4301.jpeg" alt="Showcase Image 3" class="slideshow-image">
-                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4398.jpeg" alt="Showcase Image 4" class="slideshow-image">
+                <div>
+                    <h3 class="text-xl font-semibold text-center text-slate-700 mb-4">ตู้ที่สมบูรณ์แล้ว</h3>
+                    <div class="slideshow-container">
+                        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.JPG" alt="Showcase Image 1" class="slideshow-image active">
+                        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4300.jpeg" alt="Showcase Image 2" class="slideshow-image">
+                        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4301.jpeg" alt="Showcase Image 3" class="slideshow-image">
+                        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4398.jpeg" alt="Showcase Image 4" class="slideshow-image">
+                    </div>
                 </div>
-                <div class="slideshow-container">
-                    <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_DB7F03A5-69BC-43CD-86E7-9E26C80CD70A.jpeg" alt="ตู้ทดลอง" class="slideshow-image active">
-                     <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4333.jpeg" alt="Placeholder for slideshow 2" class="slideshow-image">
-                     <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4458.JPG" alt="Placeholder for slideshow 2" class="slideshow-image">
+                <div>
+                    <h3 class="text-xl font-semibold text-center text-slate-700 mb-4">ตู้ที่อยู่ระหว่างการทดลองผลิตภัณฑ์ใหม่ๆ</h3>
+                    <div class="slideshow-container">
+                        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_DB7F03A5-69BC-43CD-86E7-9E26C80CD70A.jpeg" alt="ตู้ทดลอง" class="slideshow-image active">
+                         <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4333.jpeg" alt="Placeholder for slideshow 2" class="slideshow-image">
+                         <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4458.JPG" alt="Placeholder for slideshow 2" class="slideshow-image">
+                    </div>
                 </div>
             </div>
              <p class="text-center mt-8 text-slate-600">"เราทดสอบและใช้งานผลิตภัณฑ์ของเรากับตู้จริงทุกวัน เพื่อให้มั่นใจว่าคุณจะได้รับผลลัพธ์ที่ดีที่สุด"</p>
@@ -308,6 +371,7 @@
                 const scienceData = [
                     { title: 'ทำไม G1 ถึงเป็นสูตร N-P Free?', content: 'ในช่วงตั้งตู้ใหม่ ดินไม้น้ำจะคายแอมโมเนีย (แหล่ง N) ออกมามากอยู่แล้ว การไม่เติม N และ P เพิ่ม คือการตัดอาหารหลักของตะไคร่ ทำให้พืชใหม่ที่ยังอ่อนแอสามารถตั้งตัวได้โดยมีความเสี่ยงน้อยที่สุด' },
                     { title: 'คีเลต (Chelate) คืออะไร และทำไมถึงสำคัญ?', content: 'คีเลตคือ "บอดี้การ์ด" ที่คอยคุ้มกันจุลธาตุที่ละเอียดอ่อนอย่างธาตุเหล็ก (Fe) ไม่ให้ตกตะกอนในน้ำ ทำให้พืชสามารถดูดซึมไปใช้บำรุงสีสันได้ทันทีผ่านทางใบ เราเลือกใช้คีเลตคุณภาพสูง (DTPA) ที่มีความเสถียรในทุกสภาวะของตู้ไม้น้ำ' },
+                    { title: 'G2 คือสูตรที่สมดุล', content: 'ในช่วงที่ต้นไม่กำลังเจริญเติบโตเต็มที่ ปัญหาสำคัญคือตะไคร่บุกเมื่อเราเติมแร่ธาตุมากเกินไป หรือต้นไม้โตช้าเมื่อสารอาหารน้อยเกินไป เราได้ทดสอบจนได้สูตรที่ลงตัวสำหรับช่วงสำคัญนี้ เพื่อลดความเสี่ยงตะไคร่และเร่งการเติบโตของต้นไม่ให้มากที่สุด' },
                     { title: 'ทำไมต้องใช้สารเกรด AR (Analytical Reagent)?', content: 'เพื่อความบริสุทธิ์และความปลอดภัยสูงสุด เกรด AR คือวัตถุดิบระดับห้องปฏิบัติการที่มีสารเจือปนน้อยมาก ทำให้เรามั่นใจได้ว่าผลิตภัณฑ์ของเราปลอดภัยต่อสัตว์น้ำที่บอบบางที่สุดอย่างกุ้งแคระ และมีคุณภาพคงที่ในทุกล็อตการผลิต' },
                     { title: 'ปรัชญาของ G3 Sustain (Lean Dosing)', content: 'เมื่อตู้สวยสมบูรณ์แล้ว เราไม่ต้องการให้มันโตเร็วจนต้องตัดแต่งบ่อยๆ G3 จึงลดปริมาณ N และ P ลงเพื่อ "ชะลอการโต" แต่ยังคง K และจุลธาตุไว้ในระดับสูงเพื่อ "รักษาสีสันและความสมบูรณ์" ไว้ เป็นการดูแลความงามอย่างยั่งยืน' }
                 ];
