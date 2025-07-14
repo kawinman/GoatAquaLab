@@ -5,19 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G.O.A.T Aqua Lab - The Complete Aquascaping System</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: G.O.A.T Aqua Lab Series (Blue, Green, Amber) -->
-    <!-- Application Structure Plan: A single-page, scrolling "brand story" architecture. It starts with a strong hero visual, introduces the 3-step system, allows users to deep-dive into each product, explains the science behind the brand, and finishes with real-world proof (showcase). This narrative flow is more engaging and persuasive than a static report, guiding the user from interest to trust. -->
-    <!-- Visualization & Content Choices: 
-         - Product System -> Goal: Compare/Inform -> Method: A 3-column Tailwind CSS grid with interactive cards. Hover effects provide subtle feedback. Clicking reveals more details.
-         - Bottle Visuals -> Goal: Visualize Product -> Method: Styled HTML/CSS divs to create a "2.5D" representation of each product bottle, color-coded for brand consistency. This is more performant than a full 3D scene.
-         - The Science Section -> Goal: Educate/Build Trust -> Method: Accordion-style layout using JS to reveal information on demand, keeping the UI clean.
-         - Showcase Gallery -> Goal: Provide Proof -> Method: A responsive image gallery using Tailwind Grid.
-         - All other text -> Goal: Inform -> Method: Styled HTML text blocks.
-         - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-    -->
     <style>
         body {
             font-family: 'Sarabun', sans-serif;
@@ -110,7 +101,6 @@
             transition: max-height 0.5s ease, padding 0.5s ease;
         }
 
-        /* Slideshow Styles */
         .slideshow-container {
             position: relative;
             width: 100%;
@@ -133,6 +123,14 @@
         .slideshow-image.active {
             opacity: 1;
         }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 250px;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -144,6 +142,53 @@
         <p class="text-lg md:text-2xl mt-4 max-w-3xl">โซลูชันที่สมบูรณ์แบบสำหรับทุกช่วงวัยของตู้ไม้น้ำ<br>สร้างสรรค์โดยผู้เลี้ยงตัวจริง เพื่อผลลัพธ์ระดับมืออาชีพที่ง่ายกว่าเดิม</p>
     </section>
 
+    <!-- System Overview Section -->
+    <section id="system-overview" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <header class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">ภาพรวมเส้นทางการดูแล</h2>
+                <p class="text-lg text-slate-500 mt-2">จากเริ่มต้นจนสวยงามยั่งยืนด้วยระบบของ G.O.A.T Aqua Lab</p>
+            </header>
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                <div class="relative">
+                    <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2"></div>
+                    <div class="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2" style="background: linear-gradient(to right, #3b82f6, #22c55e, #f59e0b);"></div>
+                    <div class="relative flex justify-between">
+                        <div class="text-center w-1/3">
+                            <div class="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G1</div>
+                            <h3 class="mt-2 font-bold text-blue-600">Foundation</h3>
+                            <p class="text-xs text-slate-500">0-3 เดือน</p>
+                        </div>
+                         <div class="text-center w-1/3">
+                            <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G2</div>
+                            <h3 class="mt-2 font-bold text-green-600">Peak Growth</h3>
+                            <p class="text-xs text-slate-500">3-12 เดือน</p>
+                        </div>
+                         <div class="text-center w-1/3">
+                            <div class="w-14 h-14 rounded-full bg-amber-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G3</div>
+                            <h3 class="mt-2 font-bold text-amber-600">Maintenance</h3>
+                            <p class="text-xs text-slate-500">12+ เดือน</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-center">
+                    <div class="border-t-4 border-blue-500 pt-4">
+                        <h4 class="font-semibold">G1 Bright</h4>
+                        <p class="text-sm text-slate-600 mt-1">สร้างรากฐานที่แข็งแกร่ง บำรุงสีสัน และลดความเสี่ยงตะไคร่สำหรับตู้ตั้งใหม่และตู้พืชโตช้า</p>
+                    </div>
+                    <div class="border-t-4 border-green-500 pt-4">
+                        <h4 class="font-semibold">G2 Active</h4>
+                        <p class="text-sm text-slate-600 mt-1">อาหารมื้อหลักที่ครบถ้วน (NPK + Micro) สำหรับช่วงเร่งโตเต็มที่ เพิ่มความหนาแน่นและขับสีสันให้สดใส</p>
+                    </div>
+                    <div class="border-t-4 border-amber-500 pt-4">
+                        <h4 class="font-semibold">G3 Sustain</h4>
+                        <p class="text-sm text-slate-600 mt-1">สูตรดูแลระยะยาวที่ชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสุขภาพและสีสันของตู้ที่สมบูรณ์แล้ว</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- The System Section -->
     <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6">
@@ -152,7 +197,6 @@
                 <p class="text-lg text-slate-500 mt-2">3 ขั้นตอนง่ายๆ เพื่อตู้ไม้น้ำที่สวยงามและยั่งยืน</p>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- G1 Card -->
                 <a href="g1-details.html" class="block no-underline text-current">
                     <div class="product-card bg-slate-50 rounded-lg p-8 text-center g1-card h-full">
                         <div class="bottle-mockup">
@@ -167,7 +211,6 @@
                         <p class="text-sm text-slate-600 mt-4">สำหรับตู้ตั้งใหม่ (0-3 เดือน) และตู้พืชโตช้าโดยเฉพาะ สูตร N-P Free ช่วยสร้างรากฐานที่แข็งแรง บำรุงสีสัน และลดความเสี่ยงตะไคร่</p>
                     </div>
                 </a>
-                <!-- G2 Card -->
                 <a href="g2-details.html" class="block no-underline text-current">
                     <div class="product-card bg-slate-50 rounded-lg p-8 text-center g2-card h-full">
                         <div class="bottle-mockup">
@@ -182,7 +225,6 @@
                         <p class="text-sm text-slate-600 mt-4">สำหรับช่วงเร่งโต (3-12 เดือน) สูตรอาหารมื้อหลักที่ครบถ้วนทั้ง NPK และจุลธาตุ เพื่อเร่งการเติบโต แตกกอหนาแน่น และขับสีสันให้สดใสเต็มที่</p>
                     </div>
                 </a>
-                <!-- G3 Card -->
                 <a href="g3-details.html" class="block no-underline text-current">
                     <div class="product-card bg-slate-50 rounded-lg p-8 text-center g3-card h-full">
                         <div class="bottle-mockup">
@@ -201,6 +243,23 @@
         </div>
     </section>
 
+    <!-- Market Analysis Section -->
+    <section id="market-analysis" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+             <header class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">การวิเคราะห์ตลาด</h2>
+                <p class="text-lg text-slate-500 mt-2">เปรียบเทียบจุดยืนของ G1 Bright กับชุดเริ่มต้นของคู่แข่งในตลาด</p>
+            </header>
+             <div class="bg-white p-6 rounded-xl">
+                <h3 class="text-lg font-bold mb-4 text-center">เปรียบเทียบ "จำนวนขวดที่ต้องซื้อ" สำหรับตู้เริ่มต้น</h3>
+                <div class="chart-container">
+                    <canvas id="bottleComparisonChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-slate-600 mt-4">G1 Bright คือโซลูชัน **ขวดเดียวจบ** ที่ให้ผลลัพธ์เทียบเท่ากับระบบที่ซับซ้อนและต้องซื้อหลายขวดของคู่แข่ง</p>
+             </div>
+        </div>
+    </section>
+
     <!-- The Science Section -->
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-6">
@@ -209,7 +268,6 @@
                 <p class="text-lg text-slate-500 mt-2">ปรัชญาและหลักการที่ทำให้ผลิตภัณฑ์ของเราแตกต่าง</p>
             </header>
             <div class="max-w-3xl mx-auto space-y-4" id="accordion-container">
-                 <!-- Accordion items will be injected here -->
             </div>
         </div>
     </section>
@@ -219,22 +277,19 @@
         <div class="container mx-auto px-6">
              <header class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800">Real World Results</h2>
-                <p class="text-lg text-slate-500 mt-2">ผลลัพธ์จริงจากตู้ทดสอบของเรา</p>
+                <p class="text-lg text-slate-500 mt-2">ผลลัพธ์จริงจากตู้ของผู้ก่อตั้ง</p>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <!-- Slideshow 1 -->
                 <div class="slideshow-container">
                     <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.JPG" alt="Showcase Image 1" class="slideshow-image active">
                     <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4300.jpeg" alt="Showcase Image 2" class="slideshow-image">
                     <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4301.jpeg" alt="Showcase Image 3" class="slideshow-image">
                     <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4398.jpeg" alt="Showcase Image 4" class="slideshow-image">
                 </div>
-                <!-- Slideshow 2 -->
                 <div class="slideshow-container">
                     <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_DB7F03A5-69BC-43CD-86E7-9E26C80CD70A.jpeg" alt="ตู้ทดลอง" class="slideshow-image active">
                      <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4333.jpeg" alt="Placeholder for slideshow 2" class="slideshow-image">
                      <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4458.JPG" alt="Placeholder for slideshow 2" class="slideshow-image">
-                    <!-- Add more <img> tags here for more slides in the second slideshow -->
                 </div>
             </div>
              <p class="text-center mt-8 text-slate-600">"เราทดสอบและใช้งานผลิตภัณฑ์ของเรากับตู้จริงทุกวัน เพื่อให้มั่นใจว่าคุณจะได้รับผลลัพธ์ที่ดีที่สุด"</p>
@@ -249,26 +304,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Accordion Logic
             const accordionContainer = document.getElementById('accordion-container');
-            const scienceData = [
-                {
-                    title: 'ทำไม G1 ถึงเป็นสูตร N-P Free?',
-                    content: 'ในช่วงตั้งตู้ใหม่ ดินไม้น้ำจะคายแอมโมเนีย (แหล่ง N) ออกมามากอยู่แล้ว การไม่เติม N และ P เพิ่ม คือการตัดอาหารหลักของตะไคร่ ทำให้พืชใหม่ที่ยังอ่อนแอสามารถตั้งตัวได้โดยมีความเสี่ยงน้อยที่สุด'
-                },
-                {
-                    title: 'คีเลต (Chelate) คืออะไร และทำไมถึงสำคัญ?',
-                    content: 'คีเลตคือ "บอดี้การ์ด" ที่คอยคุ้มกันจุลธาตุที่ละเอียดอ่อนอย่างธาตุเหล็ก (Fe) ไม่ให้ตกตะกอนในน้ำ ทำให้พืชสามารถดูดซึมไปใช้บำรุงสีสันได้ทันทีผ่านทางใบ เราเลือกใช้คีเลตคุณภาพสูง (DTPA) ที่มีความเสถียรในทุกสภาวะของตู้ไม้น้ำ'
-                },
-                {
-                    title: 'ทำไมต้องใช้สารเกรด AR (Analytical Reagent)?',
-                    content: 'เพื่อความบริสุทธิ์และความปลอดภัยสูงสุด เกรด AR คือวัตถุดิบระดับห้องปฏิบัติการที่มีสารเจือปนน้อยมาก ทำให้เรามั่นใจได้ว่าผลิตภัณฑ์ของเราปลอดภัยต่อสัตว์น้ำที่บอบบางที่สุดอย่างกุ้งแคระ และมีคุณภาพคงที่ในทุกล็อตการผลิต'
-                },
-                {
-                    title: 'ปรัชญาของ G3 Sustain (Lean Dosing)',
-                    content: 'เมื่อตู้สวยสมบูรณ์แล้ว เราไม่ต้องการให้มันโตเร็วจนต้องตัดแต่งบ่อยๆ G3 จึงลดปริมาณ N และ P ลงเพื่อ "ชะลอการโต" แต่ยังคง K และจุลธาตุไว้ในระดับสูงเพื่อ "รักษาสีสันและความสมบูรณ์" ไว้ เป็นการดูแลความงามอย่างยั่งยืน'
-                }
-            ];
-
             if (accordionContainer) {
+                const scienceData = [
+                    { title: 'ทำไม G1 ถึงเป็นสูตร N-P Free?', content: 'ในช่วงตั้งตู้ใหม่ ดินไม้น้ำจะคายแอมโมเนีย (แหล่ง N) ออกมามากอยู่แล้ว การไม่เติม N และ P เพิ่ม คือการตัดอาหารหลักของตะไคร่ ทำให้พืชใหม่ที่ยังอ่อนแอสามารถตั้งตัวได้โดยมีความเสี่ยงน้อยที่สุด' },
+                    { title: 'คีเลต (Chelate) คืออะไร และทำไมถึงสำคัญ?', content: 'คีเลตคือ "บอดี้การ์ด" ที่คอยคุ้มกันจุลธาตุที่ละเอียดอ่อนอย่างธาตุเหล็ก (Fe) ไม่ให้ตกตะกอนในน้ำ ทำให้พืชสามารถดูดซึมไปใช้บำรุงสีสันได้ทันทีผ่านทางใบ เราเลือกใช้คีเลตคุณภาพสูง (DTPA) ที่มีความเสถียรในทุกสภาวะของตู้ไม้น้ำ' },
+                    { title: 'ทำไมต้องใช้สารเกรด AR (Analytical Reagent)?', content: 'เพื่อความบริสุทธิ์และความปลอดภัยสูงสุด เกรด AR คือวัตถุดิบระดับห้องปฏิบัติการที่มีสารเจือปนน้อยมาก ทำให้เรามั่นใจได้ว่าผลิตภัณฑ์ของเราปลอดภัยต่อสัตว์น้ำที่บอบบางที่สุดอย่างกุ้งแคระ และมีคุณภาพคงที่ในทุกล็อตการผลิต' },
+                    { title: 'ปรัชญาของ G3 Sustain (Lean Dosing)', content: 'เมื่อตู้สวยสมบูรณ์แล้ว เราไม่ต้องการให้มันโตเร็วจนต้องตัดแต่งบ่อยๆ G3 จึงลดปริมาณ N และ P ลงเพื่อ "ชะลอการโต" แต่ยังคง K และจุลธาตุไว้ในระดับสูงเพื่อ "รักษาสีสันและความสมบูรณ์" ไว้ เป็นการดูแลความงามอย่างยั่งยืน' }
+                ];
                 scienceData.forEach(item => {
                     const itemEl = document.createElement('div');
                     itemEl.className = 'bg-white rounded-lg shadow-sm border border-slate-200';
@@ -283,20 +325,14 @@
                     `;
                     accordionContainer.appendChild(itemEl);
                 });
-
                 accordionContainer.addEventListener('click', e => {
                     const header = e.target.closest('.accordion-header');
                     if (!header) return;
-
                     const content = header.nextElementSibling;
                     const icon = header.querySelector('span');
                     const isActive = content.style.maxHeight;
-
-                    // Close all other items before opening the new one
                     accordionContainer.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
                     accordionContainer.querySelectorAll('.accordion-header span').forEach(i => i.style.transform = 'rotate(0deg)');
-
-                    // Toggle the clicked item
                     if (!isActive) {
                         content.style.maxHeight = content.scrollHeight + "px";
                         icon.style.transform = 'rotate(180deg)';
@@ -304,24 +340,45 @@
                 });
             }
 
-            // --- Slideshow Logic ---
-            // Select all slideshow containers
+            // Slideshow Logic
             const slideshows = document.querySelectorAll('.slideshow-container');
-
-            // Initialize each slideshow independently
             slideshows.forEach(slideshow => {
                 const slides = slideshow.querySelectorAll('.slideshow-image');
                 let currentSlide = 0;
-
-                // Only start the slideshow if there is more than one image
                 if (slides.length > 1) {
                     setInterval(() => {
                         slides[currentSlide].classList.remove('active');
                         currentSlide = (currentSlide + 1) % slides.length;
                         slides[currentSlide].classList.add('active');
-                    }, 4000); // Change image every 4 seconds
+                    }, 4000);
                 }
             });
+
+            // Market Analysis Chart
+            const ctxBottles = document.getElementById('bottleComparisonChart');
+            if(ctxBottles) {
+                new Chart(ctxBottles.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['G.O.A.T Aqua Lab', 'แบรนด์ไทยยอดนิยม', 'Seachem', 'ADA'],
+                        datasets: [{
+                            label: 'จำนวนขวดที่ต้องซื้อ',
+                            data: [1, 2, 3, 3],
+                            backgroundColor: ['#22c55e', '#f59e0b', '#3b82f6', '#1e293b'],
+                            borderRadius: 4,
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: { x: { ticks: { stepSize: 1 }, grid: { display: false } } }
+                    }
+                });
+            }
         });
     </script>
 
