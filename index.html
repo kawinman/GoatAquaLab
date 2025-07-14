@@ -94,6 +94,77 @@
         .alclean-color { color: #f59e0b; }
         .coming-soon-color { color: #9ca3af; }
 
+        /* New Dropper Bottle Styles */
+        .dropper-container {
+            position: relative;
+            width: 100px;
+            height: 200px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .dropper-bottle-body {
+            width: 80px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 2px solid #d1d5db;
+            border-radius: 10px 10px 5px 5px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            backdrop-filter: blur(1px);
+            overflow: hidden;
+        }
+        .dropper-cap-assembly {
+            position: absolute;
+            top: 45px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dropper-bulb {
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle at 10px 10px, #e0e0e0, #9e9e9e);
+            border-radius: 50%;
+            z-index: 10;
+            border: 1px solid #757575;
+        }
+        .dropper-cap {
+            width: 40px;
+            height: 15px;
+            background: linear-gradient(to right, #bdbdbd, #f5f5f5, #bdbdbd);
+            border-radius: 3px;
+            margin-top: -5px;
+            z-index: 5;
+            border-left: 1px solid #9e9e9e;
+            border-right: 1px solid #9e9e9e;
+        }
+        .dropper-pipette {
+            width: 4px;
+            height: 90px;
+            background-color: rgba(224, 224, 224, 0.5);
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            border-radius: 2px;
+        }
+        .dropper-label {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+
+
         .accordion-header {
             cursor: pointer;
             transition: background-color 0.2s ease;
@@ -142,7 +213,7 @@
     <section class="hero-section h-screen flex flex-col justify-center items-center text-white text-center p-4">
         <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" alt="G.O.A.T Aqua Lab Logo" class="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-lg mb-4">
         <h1 class="text-4xl md:text-6xl font-extrabold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">G.O.A.T Aqua Lab</h1>
-        <p class="text-lg md:text-2xl mt-4 max-w-3xl">โซลูชันที่สมบูรณ์แบบสำหรับทุกช่วงวัยของตู้ไม้น้ำ<br>เพื่อผลลัพธ์ระดับมืออาชีพที่"ง่าย"กว่าเดิม</p>
+        <p class="text-lg md:text-2xl mt-4 max-w-3xl">โซลูชันที่สมบูรณ์แบบสำหรับทุกช่วงวัยของตู้ไม้น้ำ<br>เพื่อผลลัพธ์ระดับมืออาชีพที่"ง่ายกว่าเดิม</p>
     </section>
 
     <!-- System Overview Section -->
@@ -278,16 +349,24 @@
                         <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์กำจัดตะไคร่อย่างเร่งด่วน (กำลังทดสอบ)</p>
                     </div>
                 </a>
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
-                    <div class="bottle-mockup mb-4 opacity-50">
-                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
-                        <div class="bottle-label">
-                            <p class="bottle-label-name coming-soon-color">?</p>
+                <a href="#" class="block no-underline text-current">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
+                        <div class="dropper-container mb-4">
+                            <div class="dropper-cap-assembly">
+                                <div class="dropper-bulb"></div>
+                                <div class="dropper-cap"></div>
+                            </div>
+                            <div class="dropper-bottle-body">
+                                <div class="dropper-pipette"></div>
+                                <div class="dropper-label">
+                                    <p class="font-bold text-4xl coming-soon-color">?</p>
+                                </div>
+                            </div>
                         </div>
+                        <h3 class="text-xl font-bold text-slate-700">เร็วๆ นี้</h3>
+                        <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์ใหม่กำลังจะมา</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-700">เร็วๆ นี้</h3>
-                    <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์ใหม่กำลังจะมา</p>
-                </div>
+                </a>
                 <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
                     <div class="bottle-mockup mb-4 opacity-50">
                         <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
