@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลิตภัณฑ์ทั้งหมด - G.O.A.T Aqua Lab</title>
+    <meta name="description" content="เลือกชมผลิตภัณฑ์ดูแลตู้ไม้น้ำทั้งหมดจาก G.O.A.T Aqua Lab ทั้งระบบปุ๋ยไม้น้ำ G1, G2, G3 และผลิตภัณฑ์เสริมอื่นๆ เพื่อความสมบูรณ์แบบของตู้ไม้น้ำของคุณ">
+    <meta name="keywords" content="ปุ๋ยไม้น้ำ, ไม้น้ำ, G1, G2, G3, Carbon+, AlClean, Vital Booster, G.O.A.T Aqua Lab">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YGWN192F4B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YGWN192F4B');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .btn-back {
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+        }
+        .product-grid-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .product-grid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .bottle-mockup {
+            width: 100px;
+            height: 200px;
+            background-color: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px 15px 8px 8px;
+            position: relative;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .bottle-cap {
+            width: 50px;
+            height: 15px;
+            background-color: #e5e7eb;
+            border-radius: 5px 5px 0 0;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .bottle-pump-neck {
+            width: 10px;
+            height: 20px;
+            background-color: #e5e7eb;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+         .bottle-pump-head {
+            width: 40px;
+            height: 10px;
+            background-color: #e5e7eb;
+            border-radius: 3px;
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .bottle-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            text-align: center;
+        }
+        .bottle-label-name {
+            font-weight: 800;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        .bottle-label-formula {
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        .g1-color { color: #3b82f6; }
+        .g2-color { color: #22c55e; }
+        .g3-color { color: #fbbf24; }
+        .c-plus-color { color: #64748b; }
+        .alclean-color { color: #f59e0b; }
+        .vital-booster-color { color: #ED46AB; }
+
+        .dropper-container {
+            position: relative;
+            width: 100px;
+            height: 200px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .dropper-bottle-body {
+            width: 80px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 2px solid #d1d5db;
+            border-radius: 10px 10px 5px 5px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            backdrop-filter: blur(1px);
+            overflow: hidden;
+        }
+        .dropper-cap-assembly {
+            position: absolute;
+            top: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dropper-bulb {
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle at 10px 10px, #e0e0e0, #9e9e9e);
+            border-radius: 50%;
+            z-index: 10;
+            border: 1px solid #757575;
+        }
+        .dropper-cap {
+            width: 40px;
+            height: 15px;
+            background: linear-gradient(to right, #bdbdbd, #f5f5f5, #bdbdbd);
+            border-radius: 3px;
+            margin-top: -5px;
+            z-index: 5;
+            border-left: 1px solid #9e9e9e;
+            border-right: 1px solid #9e9e9e;
+        }
+        .dropper-pipette {
+            width: 4px;
+            height: 90px;
+            background-color: rgba(224, 224, 224, 0.5);
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            border-radius: 2px;
+        }
+        .dropper-label {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+        .dropper-label-name {
+            font-weight: 800;
+            font-size: 1rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-6 py-12 md:py-20">
+        
+        <div class="flex justify-between items-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-800">ผลิตภัณฑ์ทั้งหมดของเรา</h1>
+            <a href="index.html" class="inline-flex items-center text-slate-600 hover:text-slate-900 font-semibold btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                กลับหน้าหลัก
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            
+            <!-- G1 -->
+            <a href="g1-details.html" class="block no-underline text-current">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center product-grid-card h-full">
+                    <div class="bottle-mockup mb-4">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name g1-color">G1</p>
+                            <p class="bottle-label-formula g1-color">Bright</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">G1 Bright</h3>
+                    <p class="text-sm text-slate-500 mt-2">สำหรับตู้ตั้งใหม่และพืชโตช้า (0-3 เดือน)</p>
+                </div>
+            </a>
+
+            <!-- G2 -->
+            <a href="g2-details.html" class="block no-underline text-current">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center product-grid-card h-full">
+                    <div class="bottle-mockup mb-4">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name g2-color">G2</p>
+                            <p class="bottle-label-formula g2-color">Active</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">G2 Active</h3>
+                    <p class="text-sm text-slate-500 mt-2">สำหรับช่วงเร่งโต (3-12 เดือน)</p>
+                </div>
+            </a>
+
+            <!-- G3 -->
+            <a href="g3-details.html" class="block no-underline text-current">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center product-grid-card h-full">
+                    <div class="bottle-mockup mb-4">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name g3-color">G3</p>
+                            <p class="bottle-label-formula g3-color">Sustain</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">G3 Sustain</h3>
+                    <p class="text-sm text-slate-500 mt-2">สำหรับดูแลระยะยาว (12+ เดือน)</p>
+                </div>
+            </a>
+
+            <!-- Carbon+ -->
+            <a href="carbon-plus-details.html" class="block no-underline text-current">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center product-grid-card h-full">
+                    <div class="bottle-mockup mb-4">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name c-plus-color" style="font-size: 1rem;">Carbon+</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">Carbon+</h3>
+                    <p class="text-sm text-slate-500 mt-2">คาร์บอนน้ำและป้องกันตะไคร่</p>
+                </div>
+            </a>
+
+            <!-- AlClean -->
+            <a href="alclean-details.html" class="block no-underline text-current">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center product-grid-card h-full">
+                    <div class="bottle-mockup mb-4">
+                        <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
+                        <div class="bottle-label">
+                            <p class="bottle-label-name alclean-color" style="font-size: 1rem;">AlClean</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">AlClean</h3>
+                    <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์กำจัดตะไคร่</p>
+                </div>
+            </a>
+
+            <!-- Vital Booster -->
+            <a href="#" class="block no-underline text-current">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center product-grid-card h-full">
+                    <div class="dropper-container mb-4">
+                        <div class="dropper-cap-assembly">
+                            <div class="dropper-bulb"></div>
+                            <div class="dropper-cap"></div>
+                        </div>
+                        <div class="dropper-bottle-body">
+                            <div class="dropper-pipette"></div>
+                            <div class="dropper-label">
+                                <p class="dropper-label-name vital-booster-color">Vital Booster</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">Vital Booster</h3>
+                    <p class="text-sm text-slate-500 mt-2">กระตุ้นการแตกยอดและเติบโต</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    
+    <footer class="text-center py-8 bg-slate-800 text-slate-400 mt-12">
+        <p>&copy; 2025 G.O.A.T Aqua Lab. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
