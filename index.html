@@ -232,57 +232,15 @@
 <body class="antialiased">
 
     <!-- Hero Section -->
-    <section class="hero-section h-screen flex flex-col justify-center items-center text-white text-center p-4">
+    <section class="hero-section relative h-screen flex flex-col justify-center items-center text-white text-center p-4">
+        <a href="https://www.instagram.com/goataqualab/" target="_blank" onclick="gtag('event', 'click', {'event_category': 'social', 'event_label': 'Header_Instagram_Click'});" class="absolute top-6 right-6 text-white hover:text-slate-300 transition-colors">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+        </a>
         <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" alt="G.O.A.T Aqua Lab Logo" class="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-lg mb-4">
         <h1 class="text-4xl md:text-6xl font-extrabold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">G.O.A.T Aqua Lab</h1>
         <p class="text-lg md:text-2xl mt-4 max-w-3xl">โซลูชันที่สมบูรณ์แบบสำหรับทุกช่วงวัยของตู้ไม้น้ำ<br>เพื่อผลลัพธ์ระดับมืออาชีพที่"ง่าย"กว่าเดิม</p>
-    </section>
-
-    <!-- System Overview Section -->
-    <section id="system-overview" class="py-16 md:py-24 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <header class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">ภาพรวมเส้นทางการดูแล</h2>
-                <p class="text-lg text-slate-500 mt-2">จากเริ่มต้นจนสวยงามยั่งยืนด้วยระบบของ G.O.A.T Aqua Lab</p>
-            </header>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
-                <div class="relative">
-                    <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2"></div>
-                    <div class="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2" style="background: linear-gradient(to right, #3b82f6, #22c55e, #fbbf24);"></div>
-                    <div class="relative flex justify-between">
-                        <div class="text-center w-1/3">
-                            <div class="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G1</div>
-                            <h3 class="mt-2 font-bold text-blue-600">Foundation</h3>
-                            <p class="text-xs text-slate-500">0-3 เดือน</p>
-                        </div>
-                         <div class="text-center w-1/3">
-                            <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G2</div>
-                            <h3 class="mt-2 font-bold text-green-600">Peak Growth</h3>
-                            <p class="text-xs text-slate-500">3-12 เดือน</p>
-                        </div>
-                         <div class="text-center w-1/3">
-                            <div class="w-14 h-14 rounded-full bg-amber-400 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G3</div>
-                            <h3 class="mt-2 font-bold text-amber-500">Maintenance</h3>
-                            <p class="text-xs text-slate-500">12+ เดือน</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-center">
-                    <div class="border-t-4 border-blue-500 pt-4">
-                        <h4 class="font-semibold">G1 Bright (K + Micro) </h4>
-                        <p class="text-sm text-slate-600 mt-1">บำรุงไม้น้ำให้แข็งแรง สร้างสีสันสดใส และลดความเสี่ยงตะไคร่สำหรับตู้ตั้งใหม่และตู้พืชโตช้า</p>
-                    </div>
-                    <div class="border-t-4 border-green-500 pt-4">
-                        <h4 class="font-semibold">G2 Active (NPK + Micro) </h4>
-                        <p class="text-sm text-slate-600 mt-1">อาหารมื้อหลักที่ครบถ้วนสำหรับช่วงเร่งโตเต็มที่ เพิ่มความหนาแน่นและขับสีสันให้สดใส</p>
-                    </div>
-                    <div class="border-t-4 border-amber-400 pt-4">
-                        <h4 class="font-semibold">G3 Sustain (NPK + Micro) </h4>
-                        <p class="text-sm text-slate-600 mt-1">สูตรดูแลระยะยาวที่ชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสุขภาพและสีสันของตู้ที่สมบูรณ์แล้ว</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- The System Section -->
@@ -338,9 +296,56 @@
             </div>
         </div>
     </section>
+    
+    <!-- System Overview Section -->
+    <section id="system-overview" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <header class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">ภาพรวมเส้นทางการดูแล</h2>
+                <p class="text-lg text-slate-500 mt-2">จากเริ่มต้นจนสวยงามยั่งยืนด้วยระบบของ G.O.A.T Aqua Lab</p>
+            </header>
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                <div class="relative">
+                    <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2"></div>
+                    <div class="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2" style="background: linear-gradient(to right, #3b82f6, #22c55e, #fbbf24);"></div>
+                    <div class="relative flex justify-between">
+                        <div class="text-center w-1/3">
+                            <div class="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G1</div>
+                            <h3 class="mt-2 font-bold text-blue-600">Foundation</h3>
+                            <p class="text-xs text-slate-500">0-3 เดือน</p>
+                        </div>
+                         <div class="text-center w-1/3">
+                            <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G2</div>
+                            <h3 class="mt-2 font-bold text-green-600">Peak Growth</h3>
+                            <p class="text-xs text-slate-500">3-12 เดือน</p>
+                        </div>
+                         <div class="text-center w-1/3">
+                            <div class="w-14 h-14 rounded-full bg-amber-400 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G3</div>
+                            <h3 class="mt-2 font-bold text-amber-500">Maintenance</h3>
+                            <p class="text-xs text-slate-500">12+ เดือน</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-center">
+                    <div class="border-t-4 border-blue-500 pt-4">
+                        <h4 class="font-semibold">G1 Bright (K + Micro) </h4>
+                        <p class="text-sm text-slate-600 mt-1">บำรุงไม้น้ำให้แข็งแรง สร้างสีสันสดใส และลดความเสี่ยงตะไคร่สำหรับตู้ตั้งใหม่และตู้พืชโตช้า</p>
+                    </div>
+                    <div class="border-t-4 border-green-500 pt-4">
+                        <h4 class="font-semibold">G2 Active (NPK + Micro) </h4>
+                        <p class="text-sm text-slate-600 mt-1">อาหารมื้อหลักที่ครบถ้วนสำหรับช่วงเร่งโตเต็มที่ เพิ่มความหนาแน่นและขับสีสันให้สดใส</p>
+                    </div>
+                    <div class="border-t-4 border-amber-400 pt-4">
+                        <h4 class="font-semibold">G3 Sustain (NPK + Micro) </h4>
+                        <p class="text-sm text-slate-600 mt-1">สูตรดูแลระยะยาวที่ชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสุขภาพและสีสันของตู้ที่สมบูรณ์แล้ว</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Other Products Section -->
-    <section id="other-products" class="py-16 md:py-24 bg-slate-50">
+    <section id="other-products" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6">
             <header class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800">ผลิตภัณฑ์อื่นๆของเรา</h2>
@@ -399,11 +404,6 @@
                     <h3 class="text-xl font-bold text-slate-700">เร็วๆ นี้</h3>
                     <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์ใหม่กำลังจะมา</p>
                 </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="products.html" class="inline-block bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg hover:bg-slate-700 transition-colors">
-                    ดูผลิตภัณฑ์ทั้งหมด
-                </a>
             </div>
         </div>
     </section>
@@ -482,6 +482,7 @@
     </section>
     
     <footer class="text-center py-8 bg-slate-800 text-slate-400">
+        
         <p>&copy; 2025 G.O.A.T Aqua Lab. All Rights Reserved.</p>
     </footer>
 
