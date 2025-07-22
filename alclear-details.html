@@ -3,703 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlClear - ทรีทเมนต์กำจัดตะไคร่เข้มข้น</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>AlClear Details - G.O.A.T Aqua Lab</title>
+    <meta name="description" content="AlClear ผลิตภัณฑ์กำจัดตะไคร่สูตรเร่งด่วนสำหรับตู้ไม้น้ำจาก G.O.A.T Aqua Lab จัดการปัญหาตะไคร่ระบาดหนักอย่างมีประสิทธิภาพ">
+    <meta name="keywords" content="กำจัดตะไคร่, ตะไคร่, AlClear, ตะไคร่ขนดำ, BBA, ปุ๋ยไม้น้ำ, G.O.A.T Aqua Lab">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YGWN192F4B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YGWN192F4B');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: #36454F;
-            background-color: #FFDAB9;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
         }
-        
-        .thai-text {
-            font-family: 'Prompt', sans-serif;
+        .btn-back {
+            transition: all 0.2s ease-in-out;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #36454F 0%, #4A5A6A 100%);
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(54, 69, 79, 0.3);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #FFDAB9;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(255, 218, 185, 0.9), rgba(255, 228, 205, 0.9)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="pattern" patternUnits="userSpaceOnUse" width="50" height="50"><circle cx="25" cy="25" r="2" fill="%2336454F" opacity="0.1"/></pattern></defs><rect width="1000" height="1000" fill="url(%23pattern)"/></svg>');
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            animation: float 20s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .emergency-badge {
-            display: inline-block;
-            background: #36454F;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(54, 69, 79, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(54, 69, 79, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(54, 69, 79, 0); }
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #36454F;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-        }
-        
-        .hero h2 {
-            font-size: 1.5rem;
-            color: #36454F;
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-        
-        .hero-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .hero-feature {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(54, 69, 79, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .hero-feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(54, 69, 79, 0.2);
-        }
-        
-        .hero-feature h3 {
-            color: #36454F;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .hero-feature p {
-            color: #36454F;
-            line-height: 1.6;
-        }
-        
-        /* Main Content Sections */
-        .section {
-            padding: 60px 0;
-            border-bottom: 1px solid rgba(54, 69, 79, 0.1);
-        }
-        
-        .section:nth-child(even) {
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
-        .section h2 {
-            font-size: 2.5rem;
-            color: #36454F;
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: 600;
-        }
-        
-        /* Product Info Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 50px;
-        }
-        
-        .product-image {
-            text-align: center;
-        }
-        
-        .product-image .bottle {
-            width: 300px;
-            height: 400px;
-            background: linear-gradient(135deg, #36454F 0%, #4A5A6A 100%);
-            border-radius: 20px;
-            position: relative;
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(54, 69, 79, 0.3);
-            overflow: hidden;
-        }
-        
-        .product-image .bottle::before {
-            content: 'AlClear';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        .product-image .bottle::after {
-            content: '250ML';
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #FFDAB9;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .product-info {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(54, 69, 79, 0.1);
-        }
-        
-        .product-info h3 {
-            color: #36454F;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .product-info p {
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        
-        .algae-list {
-            background: #FFDAB9;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
-        .algae-list h4 {
-            color: #36454F;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .algae-list ul {
-            list-style: none;
-            color: #36454F;
-        }
-        
-        .algae-list li {
-            padding: 5px 0;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .algae-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #36454F;
-            font-weight: bold;
-        }
-        
-        /* Usage Instructions */
-        .usage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .usage-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(54, 69, 79, 0.1);
-            border-left: 5px solid #36454F;
-        }
-        
-        .usage-card h3 {
-            color: #36454F;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .dosage-highlight {
-            background: #36454F;
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 20px 0;
-        }
-        
-        /* Warning Section */
-        .warning-section {
-            background: linear-gradient(135deg, rgba(54, 69, 79, 0.05), rgba(255, 218, 185, 0.1));
-            padding: 50px 0;
-        }
-        
-        .warning-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .warning-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(54, 69, 79, 0.1);
-            border-top: 4px solid #36454F;
-        }
-        
-        .warning-card h4 {
-            color: #36454F;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .warning-card h4::before {
-            content: '⚠️';
-            font-size: 1.2rem;
-        }
-        
-        .highlight-text {
-            background: #36454F;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        /* Language Tabs */
-        .language-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            background: white;
-            border-radius: 10px;
-            padding: 5px;
-            box-shadow: 0 5px 15px rgba(54, 69, 79, 0.1);
-            max-width: 400px;
-            margin: 0 auto 40px auto;
-        }
-        
-        .tab-button {
-            flex: 1;
-            padding: 15px 30px;
-            border: none;
-            background: transparent;
-            color: #36454F;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-button.active {
-            background: #36454F;
-            color: white;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Footer */
-        .footer {
-            background: #36454F;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section h4 {
-            margin-bottom: 15px;
-            color: #FFDAB9;
-        }
-        
-        .expiry-info {
-            background: rgba(255, 218, 185, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            border: 1px solid #FFDAB9;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.2rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .product-image .bottle {
-                width: 250px;
-                height: 350px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .usage-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .warning-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Scroll animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .btn-back:hover {
+            transform: translateX(-5px);
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">AlClear</a>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="#product">ผลิตภัณฑ์</a></li>
-                        <li><a href="#usage">วิธีใช้</a></li>
-                        <li><a href="#warnings">คำเตือน</a></li>
-                        <li><a href="#contact">ติดต่อ</a></li>
-                    </ul>
-                </nav>
-            </div>
+<body class="antialiased">
+
+    <div class="container mx-auto px-6 py-12 md:py-20">
+        
+        <!-- Back Button -->
+        <div class="mb-8">
+            <a href="index.html" class="inline-flex items-center text-slate-600 hover:text-amber-500 font-semibold btn-back">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                กลับหน้าหลัก
+            </a>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="emergency-badge">For Severe Algae Outbreaks</div>
-                <h1>AlClear</h1>
-                <h2 class="thai-text">ทรีทเมนต์กำจัดตะไคร่เข้มข้น / Intensive Algae Treatment</h2>
-                
-                <div class="hero-features">
-                    <div class="hero-feature fade-in-up">
-                        <h3>สำหรับกำจัดเฉพาะจุด</h3>
-                        <p>กำจัดตะไคร่ที่ต้นตออย่างแม่นยำและมีประสิทธิภาพ ใช้สำหรับฉีดพ่นโดยตรงในบริเวณที่มีปัญหา</p>
-                    </div>
-                    <div class="hero-feature fade-in-up">
-                        <h3>ปลอดภัยต่อระบบนิเวศ</h3>
-                        <p>ปลอดภัยต่อสัตว์น้ำ ไม่กระทบค่า TDS และไม่ทำลายสมดุลของระบบนิเวศน์ในตู้ปลา</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Information -->
-    <section id="product" class="section">
-        <div class="container">
-            <h2 class="thai-text">รายละเอียดผลิตภัณฑ์</h2>
-            <div class="product-grid">
-                <div class="product-image fade-in-up">
-                    <div class="bottle"></div>
-                </div>
-                <div class="product-info fade-in-up">
-                    <h3 class="thai-text">เกี่ยวกับ AlClear</h3>
-                    <p><strong>AlClear</strong> คือทรีทเมนต์กำจัดตะไคร่สูตรเข้มข้น สำหรับใช้จัดการปัญหาตะไคร่ระบาดหนักอย่างเร่งด่วน ออกแบบมาเพื่อกำจัดตะไคร่ที่กำจัดได้ยาก</p>
-                    
-                    <div class="algae-list">
-                        <h4 class="thai-text">ประเภทตะไคร่ที่กำจัดได้:</h4>
-                        <ul>
-                            <li>ตะไคร่ขนดำ (Black Beard Algae - BBA)</li>
-                            <li>ตะไคร่เส้นผม (Hair Algae)</li>
-                            <li>ตะไคร่ขนเขียว (Green Fuzz)</li>
-                            <li>ตะไคร่น้ำเขียว (Green Water)</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="background: #FFDAB9; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                        <strong>ปริมาตรสุทธิ:</strong> 250ML
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Usage Instructions -->
-    <section id="usage" class="section">
-        <div class="container">
-            <div class="language-tabs">
-                <button class="tab-button active" onclick="showLanguage('thai')">ภาษาไทย</button>
-                <button class="tab-button" onclick="showLanguage('english')">English</button>
-            </div>
-
-            <!-- Thai Content -->
-            <div id="thai-content" class="tab-content active">
-                <h2 class="thai-text">วิธีการใช้งาน</h2>
-                <div class="usage-grid">
-                    <div class="usage-card fade-in-up">
-                        <h3 class="thai-text">วิธีการใช้งาน</h3>
-                        <p>ใช้สำหรับฉีดพ่นเฉพาะจุดโดยตรงในบริเวณที่มีตะไคร่</p>
-                    </div>
-                    
-                    <div class="usage-card fade-in-up">
-                        <h3 class="thai-text">ปริมาณการใช้งาน</h3>
-                        <div class="dosage-highlight">ใช้ 0.15 มล. ต่อน้ำ 1 ลิตร</div>
-                        <p>ไม่ควรใช้ติดต่อกันเกิน 7 วัน หลังจากนั้นควรหยุดใช้และสังเกตอาการ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- English Content -->
-            <div id="english-content" class="tab-content">
-                <h2>Usage Instructions</h2>
-                <div class="usage-grid">
-                    <div class="usage-card fade-in-up">
-                        <h3>Directions for Use</h3>
-                        <p>Use for spot-treating by spraying directly onto affected areas.</p>
-                    </div>
-                    
-                    <div class="usage-card fade-in-up">
-                        <h3>Dosage</h3>
-                        <div class="dosage-highlight">Use 0.15 mL per 1 L of aquarium water</div>
-                        <p>Do not apply for more than 7 consecutive days, then pause treatment and observe.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Warnings Section -->
-    <section id="warnings" class="warning-section">
-        <div class="container">
-            <h2 class="thai-text">คำเตือนและข้อควรระวัง</h2>
-            <div class="warning-grid">
-                <div class="warning-card fade-in-up">
-                    <h4 class="thai-text">คำเตือน</h4>
-                    <p><span class="highlight-text">สำหรับใช้เฉพาะที่เท่านั้น</span> ห้ามใช้เกินปริมาณที่กำหนด <span class="highlight-text">ห้ามใช้พร้อมกับคาร์บอนน้ำ</span> (ควรเว้นระยะ 24 ชม.) และระวังการใช้กับพืชบอบบาง (มอส, ริคาเดีย, เทป)</p>
-                </div>
-                
-                <div class="warning-card fade-in-up">
-                    <h4 class="thai-text">ความปลอดภัย</h4>
-                    <p>สำหรับตู้ปลาน้ำจืดเท่านั้น ห้ามรับประทาน และเก็บให้พ้นมือเด็ก</p>
-                </div>
-                
-                <div class="warning-card fade-in-up">
-                    <h4 class="thai-text">การดูแลฉุกเฉิน</h4>
-                    <p>หากสัตว์น้ำมีอาการผิดปกติ ให้หยุดใช้และเปลี่ยนน้ำ 30-50% ทันที</p>
-                </div>
-                
-                <div class="warning-card fade-in-up">
-                    <h4 class="thai-text">การเก็บรักษา</h4>
-                    <p>เก็บในที่แห้งพ้นจากแสงแดด สามารถแช่เย็นเพื่อยืดอายุการใช้งาน</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>ข้อมูลการผลิต</h4>
-                    <p>วันที่ผลิต (MFG): ..................</p>
-                </div>
-                <div class="footer-section">
-                    <h4>วันหมดอายุ</h4>
-                    <p>ควรใช้ก่อน (EXP): 18 เดือนนับจากวันผลิต</p>
-                </div>
-                <div class="footer-section">
-                    <h4>ติดต่อเรา</h4>
-                    <p>สำหรับข้อมูลเพิ่มเติมหรือคำแนะนำการใช้งาน</p>
-                </div>
-            </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             
-            <div class="expiry-info">
-                <p><strong>หมายเหตุ:</strong> ผลิตภัณฑ์นี้สำหรับใช้ในกรณีฉุกเฉินเท่านั้น กรุณาอ่านคำแนะนำการใช้งานอย่างละเอียดก่อนใช้</p>
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <header class="mb-6">
+                    <p class="text-lg text-red-600 font-semibold">For Severe Algae Outbreaks</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-amber-500">AlClear</h1>
+                    <p class="text-xl md:text-2xl font-semibold text-amber-400 mt-2">ทรีทเมนต์กำจัดตะไคร่เข้มข้น / Intensive Algae Treatment</p>
+                </header>
+
+                <div class="space-y-4 text-slate-700 mb-8">
+                    <p class="flex items-start"><span class="text-amber-500 mr-3 mt-1">✔</span> <span><strong>สำหรับกำจัดเฉพาะจุด:</strong> กำจัดตะไคร่ที่ต้นตออย่างแม่นยำและมีประสิทธิภาพ</span></p>
+                    <p class="flex items-start"><span class="text-amber-500 mr-3 mt-1">✔</span> <span><strong>ปลอดภัยต่อระบบนิเวศ:</strong> ปลอดภัยต่อปสัตว์น้ำ และไม่กระทบค่า TDS</span></p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-amber-200 pb-2 mb-4">รายละเอียดผลิตภัณฑ์ / Product Description</h2>
+                    <div class="space-y-4 text-slate-600">
+                        <p>AlClear คือทรีทเมนต์กำจัดตะไคร่สูตรเข้มข้น สำหรับใช้จัดการปัญหาตะไคร่ระบาดหนักอย่างเร่งด่วน ออกแบบมาเพื่อกำจัดตะไคร่ที่กำจัดได้ยาก เช่น ตะไคร่ขนดำ (BBA), ตะไคร่เส้นผม, ตะไคร่ขนเขียว, และตะไคร่น้ำเขียว</p>
+                        <p class="text-sm italic">AlClear is an intensive algae treatment for rapid response to severe algae outbreaks. It is designed to effectively eliminate stubborn algae such as Black Beard Algae (BBA), hair algae, green fuzz, and green water.</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Side Panel -->
+            <div class="bg-slate-100 p-6 rounded-lg">
+                <div class="space-y-6">
+                    <div>
+                        <div class="block w-full bg-slate-400 text-white text-center font-bold py-3 px-4 rounded-lg cursor-not-allowed">
+                           เร็วๆ นี้ (Coming Soon)
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">วิธีใช้ / Directions for Use</h3>
+                        <div class="text-sm text-slate-600 space-y-3">
+                           <p>● ใช้สำหรับฉีดพ่นเฉพาะจุดโดยตรงในบริเวณที่มีตะไคร่</p>
+                           <p><strong>● ปริมาณการใช้งาน:</strong> ใช้ 0.15 มล. ต่อน้ำ 1 ลิตร ไม่ควรใช้ติดต่อกันเกิน 7 วัน หลังจากนั้นควรหยุดใช้และเว้น3-5วันก่อนเพิ่มอีกครั้ง</p>
+                           <p><strong>● ปริมาณการใช้งาน:</strong> ใช้ 0.1 มล. ต่อน้ำ 1 ลิตร เพื่อรักษาคุณภาพน้ำอย่างต่อเนื่อง หรือเปลี่ยนไปใช้คาร์บอนน้ำแทน  </p>                        
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">คำแนะนำและข้อควรระวัง</h3>
+                        <div class="text-sm text-slate-600 space-y-4">
+                            <div class="p-3 border-l-4 border-red-400 bg-red-50 text-red-800">
+                                <p class="font-semibold">คำเตือน / Warning</p>
+                                <ul class="list-disc list-inside mt-1 text-xs">
+                                    <li>สำหรับใช้เฉพาะที่เท่านั้น / For emergency use only.</li>
+                                    <li>ห้ามใช้เกินปริมาณที่กำหนด / Do not exceed dosage.</li>
+                                    <li>ห้ามใช้พร้อมกับคาร์บอนน้ำ (ควรเว้นระยะ 24 ชม.) / Do not use with liquid carbon (wait 24 hrs).</li>
+                                    <li>ระวังการใช้กับพืชบอบบาง (มอส, ริคาเดีย, เทป) / Avoid direct contact with sensitive plants (Moss, Riccia, Vallisneria).</li>
+                                </ul>
+                            </div>
+                            <div class="p-3 border-l-4 border-blue-400 bg-blue-50 text-blue-800">
+                                <p class="font-semibold">การดูแลฉุกเฉิน / Emergency Care</p>
+                                <p class="text-xs mt-1">หากสัตว์น้ำมีอาการผิดปกติ ให้หยุดใช้และเปลี่ยนน้ำ 30-50% ทันที / If aquatic life shows distress, stop use and perform a 30-50% water change immediately.</p>
+                            </div>
+                             <div class="p-3 border-l-4 border-slate-400 bg-slate-200 text-slate-800">
+                                <p class="font-semibold">ความปลอดภัย / Safety</p>
+                                 <ul class="list-disc list-inside mt-1 text-xs">
+                                    <li>สำหรับตู้ปลาน้ำจืดเท่านั้น / For freshwater aquariums only.</li>
+                                    <li>ห้ามรับประทาน และเก็บให้พ้นมือเด็ก / Do not ingest and keep out of reach of children.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">การเก็บรักษา / Storage</h3>
+                        <p class="text-sm text-slate-600">เก็บในที่แห้งพ้นจากแสงแดด สามารถแช่เย็นเพื่อยืดอายุการใช้งาน / Store in a cool, dry place away from sunlight. Refrigerate to extend shelf life.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">ควรใช้ก่อน</h3>
+                        <p class="text-sm text-slate-600">18 เดือนนับจากวันผลิต / 18 months from MFG date.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+    
+    <footer class="text-center py-8 bg-slate-800 text-slate-400 mt-12">
+        <p>&copy; 2025 G.O.A.T Aqua Lab. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // Language Tab Switching
-        function showLanguage(language) {
-            // Hide all content
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Remove active from all buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Show selected content
-            document.getElementById(language + '-content').classList.add('active');
-            
-            // Add active to clicked button
-            event.target.classList.add('active');
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const tankVolumeInput = document.getElementById('tank-volume');
+            const dosageResultDiv = document.getElementById('dosage-result');
 
-        // Scroll Animation
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.fade-in-up');
-            const windowHeight = window.innerHeight;
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+            if (tankVolumeInput) {
+                tankVolumeInput.addEventListener('input', () => {
+                    const volume = parseFloat(tankVolumeInput.value);
+                    if (volume > 0) {
+                        const dosage = volume * 0.15;
+                        dosageResultDiv.textContent = `ปริมาณการใช้ที่แนะนำ: ${dosage.toFixed(2)} มล.`;
+                    } else {
+                        dosageResultDiv.textContent = '';
+                    }
+                });
+            }
         });
-
-        // Initialize animations
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Initial animation trigger
-        setTimeout(animateOnScroll, 100);
     </script>
 </body>
 </html>
