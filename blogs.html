@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - G.O.A.T Aqua Lab</title>
+    <meta name="description" content="บทความและเคล็ดลับการเลี้ยงไม้น้ำจาก G.O.A.T Aqua Lab">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .blog-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" alt="G.O.A.T Aqua Lab Logo" class="w-10 h-10 rounded-full">
+                <span class="text-xl font-bold text-slate-800">G.O.A.T Aqua Lab</span>
+            </a>
+            <div>
+                <a href="index.html" class="text-slate-600 hover:text-blue-600 font-semibold">หน้าแรก</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="bg-slate-800 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold">G.O.A.T Aqua Lab Blog</h1>
+            <p class="text-lg md:text-xl mt-4 text-slate-300">เคล็ดลับ, เทคนิค, และเรื่องราวเบื้องหลังผลิตภัณฑ์ของเรา</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- Featured Post Container -->
+        <div id="featured-post-container">
+            <!-- Featured post will be injected here -->
+        </div>
+
+        <hr class="my-16 border-slate-200">
+
+        <!-- Blog Grid Container -->
+        <div id="blog-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Blog posts will be injected here -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 bg-slate-800 text-slate-400">
+        <p>&copy; 2025 G.O.A.T Aqua Lab. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('blog-manifest.json')
+                .then(response => response.json())
+                .then(posts => {
+                    const featuredPostContainer = document.getElementById('featured-post-container');
+                    const blogGridContainer = document.getElementById('blog-grid-container');
+
+                    if (posts.length > 0) {
+                        // The first post is the featured one
+                        const featuredPost = posts[0];
+                        featuredPostContainer.innerHTML = `
+                            <article class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                                <a href="${featuredPost.url}" class="block overflow-hidden rounded-lg">
+                                    <img src="${featuredPost.image}" alt="${featuredPost.title}" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300">
+                                </a>
+                                <div>
+                                    <p class="text-sm text-slate-500 mb-2">${featuredPost.date}</p>
+                                    <h2 class="text-3xl font-bold mb-4">
+                                        <a href="${featuredPost.url}" class="hover:text-green-600 transition-colors">${featuredPost.title}</a>
+                                    </h2>
+                                    <p class="text-slate-600 mb-6">${featuredPost.description}</p>
+                                    <a href="${featuredPost.url}" class="font-semibold text-green-600 hover:text-green-700">อ่านต่อ &rarr;</a>
+                                </div>
+                            </article>
+                        `;
+
+                        // The rest of the posts go into the grid
+                        const otherPosts = posts.slice(1);
+                        otherPosts.forEach(post => {
+                            const postElement = document.createElement('article');
+                            postElement.className = 'blog-card bg-white rounded-lg shadow-md overflow-hidden';
+                            postElement.innerHTML = `
+                                <a href="${post.url}">
+                                    <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                                </a>
+                                <div class="p-6">
+                                    <p class="text-sm text-slate-500 mb-2">${post.date}</p>
+                                    <h3 class="text-xl font-bold mb-3">
+                                        <a href="${post.url}" class="hover:text-blue-600 transition-colors">${post.title}</a>
+                                    </h3>
+                                    <p class="text-slate-600 text-sm">${post.description}</p>
+                                </div>
+                            `;
+                            blogGridContainer.appendChild(postElement);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching blog posts:', error);
+                    const mainContent = document.querySelector('main');
+                    mainContent.innerHTML = '<p class="text-center text-red-500">Could not load blog posts. Please try again later.</p>';
+                });
+        });
+    </script>
+
+</body>
+</html>
 
