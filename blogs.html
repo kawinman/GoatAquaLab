@@ -108,15 +108,41 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Helper function to parse Thai date strings into JavaScript Date objects
+            function parseThaiDate(dateString) {
+                const thaiMonths = {
+                    'มกราคม': 0, 'กุมภาพันธ์': 1, 'มีนาคม': 2, 'เมษายน': 3,
+                    'พฤษภาคม': 4, 'มิถุนายน': 5, 'กรกฎาคม': 6, 'สิงหาคม': 7,
+                    'กันยายน': 8, 'ตุลาคม': 9, 'พฤศจิกายน': 10, 'ธันวาคม': 11
+                };
+                const parts = dateString.split(' ');
+                if (parts.length !== 3) return null;
+                const day = parseInt(parts[0], 10);
+                const month = thaiMonths[parts[1]];
+                const year = parseInt(parts[2], 10);
+                if (isNaN(day) || month === undefined || isNaN(year)) return null;
+                return new Date(year, month, day);
+            }
+
             fetch('blog-manifest.json')
                 .then(response => response.json())
                 .then(posts => {
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0); // Set to the start of the day for accurate comparison
+
+                    // 1. Filter out future posts
+                    // 2. Sort by most recent first
+                    const publishedPosts = posts
+                        .map(post => ({ ...post, dateObject: parseThaiDate(post.date) }))
+                        .filter(post => post.dateObject && post.dateObject <= today)
+                        .sort((a, b) => b.dateObject - a.dateObject);
+
                     const featuredPostContainer = document.getElementById('featured-post-container');
                     const blogGridContainer = document.getElementById('blog-grid-container');
 
-                    if (posts.length > 0) {
-                        // The first post is the featured one
-                        const featuredPost = posts[0];
+                    if (publishedPosts.length > 0) {
+                        // The first post (most recent) is the featured one
+                        const featuredPost = publishedPosts[0];
                         featuredPostContainer.innerHTML = `
                             <article class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                                 <a href="${featuredPost.url}" class="block overflow-hidden rounded-lg">
@@ -134,7 +160,7 @@
                         `;
 
                         // The rest of the posts go into the grid
-                        const otherPosts = posts.slice(1);
+                        const otherPosts = publishedPosts.slice(1);
                         otherPosts.forEach(post => {
                             const postElement = document.createElement('article');
                             postElement.className = 'blog-card bg-white rounded-lg shadow-md overflow-hidden';
@@ -152,6 +178,8 @@
                             `;
                             blogGridContainer.appendChild(postElement);
                         });
+                    } else {
+                         featuredPostContainer.innerHTML = '<p class="text-center text-slate-500">ยังไม่มีบทความในขณะนี้</p>';
                     }
                 })
                 .catch(error => {
