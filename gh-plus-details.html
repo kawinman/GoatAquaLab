@@ -40,14 +40,14 @@
       "image": "[URL_TO_GH_PLUS_IMAGE]", <!-- Placeholder: Replace with actual product image URL -->
       "offers": {
         "@type": "Offer",
+        "url": "[URL_TO_SHOPEE_GH_PLUS]", <!-- Placeholder: Add actual Shopee link when available -->
         "availability": "https://schema.org/PreOrder", <!-- Update to InStock when available -->
         "seller": {
             "@type": "Organization",
-            "name": "G.O.A.T Aqua Lab"
+            "name": "G.O.A.T Aqua Lab (Shopee)"
         }
-         // Add "url": "[URL_TO_SHOPEE_GH_PLUS]" when available on Shopee
       }
-       // Add AggregateRating if you have review data
+       // Add AggregateRating and FAQPage if you have review data and FAQs
     }
     </script>
 
@@ -75,9 +75,6 @@
         }
         .btn-back:hover {
             transform: translateX(-5px);
-        }
-         .product-feature-icon {
-            color: #60a5fa; /* Using a blue-ish color for minerals */
         }
          .bottle-mockup {
             width: 100px;
@@ -129,6 +126,17 @@
             font-size: 1.5rem;
             line-height: 1;\n        }
          .gh-plus-color { color: #60a5fa; } /* Blue-ish color for GH+ */
+
+         .nutrient-table th, .nutrient-table td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .nutrient-table thead th {
+            background-color: #eef2ff; /* Light blue */
+        }
+         .nutrient-table tbody tr:nth-child(even) {
+            background-color: #f8fafc; /* Subtle stripe */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -147,10 +155,10 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 
-            <!-- Main Content -->
+            <!-- Left Column: Image and Description -->
             <div class="lg:col-span-2">
 
-                 <!-- Product Image -->
+                 <!-- Product Image (Mockup) -->
                 <div class="mb-8 text-center">
                      <div class="bottle-mockup inline-block">
                         <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
@@ -158,25 +166,27 @@
                             <p class="bottle-label-name gh-plus-color">GH+</p>
                         </div>
                     </div>
+                    <!-- If you have an actual product image, use this instead: -->
+                    <!-- <img src="[URL_TO_GH_PLUS_IMAGE]" alt="GH+ Product Bottle" class="w-full max-w-xs mx-auto rounded-lg shadow-md"> -->
                 </div>
 
-
-                <header class="mb-6 pb-4 border-b-2 border-blue-200"> <!-- Using blue border for GH+ -->
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-600">GH+</h1> <!-- Using blue color for GH+ -->
-                    <p class="text-xl md:text-2xl font-semibold text-blue-500 mt-2">General Hardness Supplement</p> <!-- Using blue color for GH+ -->
+                <header class="mb-6">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-600">GH+</h1>
+                    <p class="text-xl md:text-2xl font-semibold text-blue-500 mt-2">General Hardness Supplement</p>
                     <p class="text-lg text-slate-600 mt-1">ผลิตภัณฑ์เพิ่มค่าความกระด้างรวม (GH) สำหรับตู้ไม้น้ำ</p>
                 </header>
 
                 <div class="space-y-4 text-slate-700 mb-8">
-                    <p class="flex items-start"><span class="product-feature-icon mr-3 mt-1">✔</span> <span><strong>เพิ่มแคลเซียมและแมกนีเซียม:</strong> ธาตุสำคัญต่อโครงสร้างพืช</span></p>
-                    <p class="flex items-start"><span class="product-feature-icon mr-3 mt-1">✔</span> <span><strong>ป้องกันอาการขาดแร่ธาตุ:</strong> ลดปัญหาใบขาด/แหว่ง/บิดงอ</span></p>
-                    <p class="flex items-start"><span class="product-feature-icon mr-3 mt-1">✔</span> <span><strong>ส่งเสริมการดูดซึมสารอาหาร:</strong> ช่วยให้พืชใช้ปุ๋ยได้อย่างมีประสิทธิภาพ</span></p>
-                     <p class="flex items-start"><span class="product-feature-icon mr-3 mt-1">✔</span> <span><strong>เหมาะกับน้ำอ่อน/น้ำ RO:</strong> เติมเต็มแร่ธาตุที่ขาดหายไป</span></p>
-                    <p class="flex items-start"><span class="product-feature-icon mr-3 mt-1">✔</span> <span><strong>ปลอดภัยต่อสัตว์น้ำ:</strong> เมื่อใช้ตามปริมาณที่แนะนำ</span></p>
+                     <!-- Using checkmark icon with GH+ color -->
+                    <p class="flex items-start"><span class="text-blue-600 mr-3 mt-1">✔</span> <span><strong>เพิ่มแคลเซียม (Ca) และแมกนีเซียม (Mg):</strong> ธาตุสำคัญต่อโครงสร้างพืช</span></p>
+                    <p class="flex items-start"><span class="text-blue-600 mr-3 mt-1">✔</span> <span><strong>ป้องกันอาการขาดแร่ธาตุ:</strong> ลดปัญหาใบขาด/แหว่ง/บิดงอ</span></p>
+                    <p class="flex items-start"><span class="text-blue-600 mr-3 mt-1">✔</span> <span><strong>ส่งเสริมการดูดซึมสารอาหาร:</strong> ช่วยให้พืชใช้ปุ๋ยได้อย่างมีประสิทธิภาพ</span></p>
+                     <p class="flex items-start"><span class="text-blue-600 mr-3 mt-1">✔</span> <span><strong>เหมาะกับน้ำอ่อน/น้ำ RO:</strong> เติมเต็มแร่ธาตุที่ขาดหายไป</span></p>
+                    <p class="flex items-start"><span class="text-blue-600 mr-3 mt-1">✔</span> <span><strong>ปลอดภัยต่อสัตว์น้ำ:</strong> เมื่อใช้ตามปริมาณที่แนะนำ</span></p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md mb-6"> <!-- Card styling -->
-                    <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-blue-200 pb-2 mb-4">คำอธิบายผลิตภัณฑ์ / Product Description</h2> <!-- Using blue border for GH+ -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-blue-200 pb-2 mb-4">คำอธิบายผลิตภัณฑ์ / Product Description</h2>
                     <div class="space-y-4 text-slate-600">
                         <p>GH+ คือผลิตภัณฑ์ปรับสภาพน้ำที่ช่วยเพิ่มค่า General Hardness (GH) หรือความกระด้างรวมในตู้ไม้น้ำ ซึ่งประกอบด้วยแคลเซียม (Ca) และแมกนีเซียม (Mg) ในอัตราส่วนที่เหมาะสมสำหรับพืชน้ำโดยเฉพาะ การมีค่า GH ที่เพียงพอมีความสำคัญต่อการสร้างผนังเซลล์ที่แข็งแรง ป้องกันอาการใบขาด แหว่ง หรือบิดงอ และช่วยให้พืชดูดซึมสารอาหารอื่นๆ ได้ดียิ่งขึ้น เหมาะอย่างยิ่งสำหรับตู้ที่ใช้น้ำ RO หรือน้ำอ่อน ซึ่งมักขาดแร่ธาตุสำคัญเหล่านี้</p>
                          <p class="text-sm italic">GH+ is a water supplement that increases General Hardness (GH) in planted aquariums. It contains Calcium (Ca) and Magnesium (Mg) in an optimal ratio for aquatic plants. Sufficient GH is crucial for strong cell wall formation, preventing leaf deformities, and enhancing nutrient uptake. It's ideal for tanks using RO or soft water, which often lack these essential minerals.</p>
@@ -185,75 +195,87 @@
 
                 <!-- Optional: Guaranteed Analysis Section (if you have specific ppm data) -->
                 <!--
-                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <div class="mb-8">
                     <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-blue-200 pb-2 mb-4">ปริมาณธาตุอาหาร / Guaranteed Analysis</h2>
                     <p class="text-sm text-slate-500 mb-3">ต่อ 1 ปั๊ม (≈ 2 mL) ในน้ำ 20 ลิตร โดยประมาณ (สมมติ)</p>
                     <div class="overflow-x-auto">
                         <table class="min-w-full bg-white rounded-lg shadow nutrient-table">
-                            <thead class="bg-blue-50">
+                            <thead class="bg-blue-50"> // Light blue background
                                 <tr>
-                                    <th class="text-sm font-semibold text-slate-700">ธาตุอาหาร / Nutrient</th>
-                                    <th class="text-sm font-semibold text-slate-700">ปริมาณที่ได้รับ / Nutrient Added (ppm)</th>
+                                    <th class="text-sm font-semibold text-slate-700 px-4 py-2">ธาตุอาหาร / Nutrient</th>
+                                    <th class="text-sm font-semibold text-slate-700 px-4 py-2">ปริมาณที่ได้รับ / Nutrient Added (ppm)</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-slate-600 text-sm">
-                                <tr><td>แคลเซียม (Ca)</td><td>≥ X ppm</td></tr> // Replace X
-                                <tr class="bg-slate-50"><td>แมกนีเซียม (Mg)</td><td>≥ Y ppm</td></tr> // Replace Y
+                            <tbody class="text-slate-600 text-sm divide-y divide-slate-200"> // Added row divider
+                                <tr class="bg-white hover:bg-slate-50"> // Added hover
+                                    <td class="px-4 py-2">แคลเซียม (Ca)</td>
+                                    <td class="px-4 py-2">≥ X ppm</td> // Replace X
+                                </tr>
+                                <tr class="bg-slate-50 hover:bg-slate-100"> // Alternating row color, added hover
+                                    <td class="px-4 py-2">แมกนีเซียม (Mg)</td>
+                                    <td class="px-4 py-2">≥ Y ppm</td> // Replace Y
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 -->
 
-                <div class="bg-white p-6 rounded-lg shadow-md mb-6"> <!-- Card styling -->
-                    <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-blue-200 pb-2 mb-4">วิธีใช้ / Directions</h2> <!-- Using blue border for GH+ -->
-                    <div class="text-sm text-slate-600 space-y-3">
-                         <p><strong>เขย่าขวดก่อนใช้ทุกครั้ง</strong></p>
-                         <p><strong>Dosage:</strong> ใช้ 1 ปั๊ม (≈ 2 mL) ต่อน้ำ 20 ลิตร เพื่อเพิ่มค่า GH ประมาณ 1 °dGH</p>
-                         <p>ปรับปริมาณการใช้ตามค่า GH ที่ต้องการ โดยวัดค่าน้ำก่อนและหลังการเติม</p>
-                         <p>สามารถใช้ได้ทุกวันหรือเมื่อมีการเปลี่ยนน้ำ</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-md mb-6"> <!-- Card styling -->
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">คำแนะนำ / Suggestion</h2>
-                    <div class="text-sm text-slate-600 bg-blue-50 p-4 rounded-md shadow-sm"> <!-- Using blue background for GH+ suggestion -->
-                       ค่า GH ที่เหมาะสมสำหรับตู้ไม้น้ำส่วนใหญ่อยู่ที่ประมาณ 3-6 °dGH อย่างไรก็ตาม ค่าที่เหมาะสมอาจแตกต่างกันไปขึ้นอยู่กับชนิดของพืชและสัตว์น้ำที่คุณเลี้ยง
-                    </div>
-                </div>
-
-                 <div class="bg-white p-6 rounded-lg shadow-md mb-6"> <!-- Card styling -->
-                    <h2 class="text-xl font-bold text-slate-800 mb-3">ข้อควรระวัง / Precautions</h2>
-                    <ul class="list-none space-y-2 text-sm text-slate-600">
-                        <li>• คำนวณปริมาณการใช้ให้แม่นยำเพื่อหลีกเลี่ยงการเพิ่มค่า GH มากเกินไป</li>
-                        <li>• เก็บให้พ้นมือเด็กและสัตว์เลี้ยง</li>
+                <!-- Optional: Internal Links Section (if you write blog posts about GH) -->
+                 <!--
+                 <div class="mt-8 p-4 bg-blue-50 rounded-lg"> // Using light blue background
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">เรียนรู้เพิ่มเติมเกี่ยวกับ GH</h3> // Using blue text
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-2">
+                        <li><a href="[URL_TO_GH_BLOG_POST]" class="text-blue-600 hover:underline">ทำความเข้าใจความสำคัญของค่า GH</a></li>
                     </ul>
                 </div>
-
-                 <div class="bg-white p-6 rounded-lg shadow-md mb-6"> <!-- Card styling -->
-                    <h2 class="text-xl font-bold text-slate-800 mb-2">การเก็บรักษา / Storage</h2>
-                    <p class="text-sm text-slate-600">เก็บในที่ร่มและแห้ง หลีกเลี่ยงแสงแดดและความร้อนสูงโดยตรง ปิดฝาให้สนิท</p>
-                </div>
+                 -->
 
             </div>
 
-            <!-- Side Panel -->
-            <div class="bg-slate-100 p-6 rounded-lg h-full"> <!-- Added h-full for consistent height -->
+            <!-- Right Column: How to Use, Suggestions, Precautions, Storage -->
+            <div class="bg-slate-100 p-6 rounded-lg">
                 <div class="space-y-6">
                     <div>
-                        <div class="block w-full bg-slate-300 text-slate-600 text-center font-bold py-3 px-4 rounded-lg cursor-not-allowed opacity-80">
+                        <div class="block w-full bg-slate-400 text-white text-center font-bold py-3 px-4 rounded-lg cursor-not-allowed">
                            เร็วๆ นี้ (Coming Soon)
                         </div>
+                         <!-- When available, replace the above div with a Shopee link button -->
+                         <!--
+                         <a href="[URL_TO_SHOPEE_GH_PLUS]"
+                           target="_blank"
+                           onclick="gtag('event', 'click', {'event_category': 'outbound', 'event_label': 'Shop_Shopee_GH_Plus_Click'});"
+                           class="block w-full bg-blue-600 text-white text-center font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors text-xl">
+                            ซื้อเลยที่ Shopee
+                         </a>
+                         -->
                     </div>
-                     <!-- Maybe add a link to a blog post about GH and its importance here later -->
-                     <!--
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">วิธีใช้ / Directions</h3>
+                        <div class="text-sm text-slate-600 space-y-3">
+                           <p><strong>● เขย่าขวดก่อนใช้ทุกครั้ง</strong></p>
+                           <p><strong>● Dosage:</strong> ใช้ 1 ปั๊ม (≈ 2 mL) ต่อน้ำ 20 ลิตร เพื่อเพิ่มค่า GH ประมาณ 1 °dGH</p>
+                           <p>● ปรับปริมาณการใช้ตามค่า GH ที่ต้องการ โดยวัดค่าน้ำก่อนและหลังการเติม</p>
+                           <p>● สามารถใช้ได้ทุกวันหรือเมื่อมีการเปลี่ยนน้ำ</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">คำแนะนำ / Suggestion</h3>
+                        <div class="text-sm text-slate-600 bg-white p-4 rounded-md shadow-sm">
+                           ค่า GH ที่เหมาะสมสำหรับตู้ไม้น้ำส่วนใหญ่อยู่ที่ประมาณ 3-6 °dGH อย่างไรก็ตาม ค่าที่เหมาะสมอาจแตกต่างกันไปขึ้นอยู่กับชนิดของพืชและสัตว์น้ำที่คุณเลี้ยง
+                        </div>
+                    </div>
                      <div>
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">อ่านเพิ่มเติม</h3>
-                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-2">
-                            <li><a href="[URL_TO_GH_BLOG_POST]" class="text-blue-600 hover:underline">ทำความเข้าใจความสำคัญของค่า GH</a></li>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">ข้อควรระวัง / Precautions</h3>
+                        <ul class="list-none space-y-2 text-sm text-slate-600">
+                            <li>● คำนวณปริมาณการใช้ให้แม่นยำเพื่อหลีกเลี่ยงการเพิ่มค่า GH มากเกินไป</li>
+                            <li>● เก็บให้พ้นมือเด็กและสัตว์เลี้ยง</li>
                         </ul>
                     </div>
-                     -->
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">การเก็บรักษา / Storage</h3>
+                        <p class="text-sm text-slate-600">เก็บในที่ร่มและแห้ง หลีกเลี่ยงแสงแดดและความร้อนสูงโดยตรง ปิดฝาให้สนิท</p>
+                    </div>
                 </div>
             </div>
 
