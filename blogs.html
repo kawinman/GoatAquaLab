@@ -108,8 +108,8 @@
 
     <script>
  document.addEventListener('DOMContentLoaded', () => {
- const blogPostsContainer = document.getElementById('blog-grid-container'); // Changed ID
- const featuredPostContainer = document.getElementById('featured-post-container'); // Changed ID
+ const blogPostsContainer = document.getElementById('blog-grid-container');
+ const featuredPostContainer = document.getElementById('featured-post-container');
 
  // Fetch blog manifest
  fetch('blog-manifest.json')
@@ -195,7 +195,7 @@
                                     <p class="text-slate-600 text-sm">${post.description}</p>
                                 </div>
                             `;
- blogGridContainer.appendChild(postElement);
+ blogPostsContainer.appendChild(postElement);
  });
  } else {
  featuredPostContainer.innerHTML = '<p class="text-center text-slate-500">ยังไม่มีบทความในขณะนี้</p>';
@@ -203,7 +203,7 @@
  })
  .catch(error => {
  console.error('Error fetching blog manifest:', error);
- const mainContent = document.querySelector('main');
+ const mainContent = document.querySelector('main .container'); // Target content container
  mainContent.innerHTML = '<p class="text-center text-red-500">Could not load blog posts. Please try again later.</p>';
  });
  });
