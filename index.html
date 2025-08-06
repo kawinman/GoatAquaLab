@@ -668,5 +668,43 @@
             }
         });
     </script>
+    <!-- Minimal Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-800 text-white p-4 text-center text-sm z-50">
+        <p>เว็บไซต์นี้ใช้คุกกี้เพื่อให้แน่ใจว่าคุณได้รับประสบการณ์ที่ดีที่สุด </p>
+        <button id="accept-cookies" class="ml-4 px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded text-white font-semibold text-xs">ยอมรับ</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const consentBanner = document.getElementById('cookie-consent-banner');
+            const acceptButton = document.getElementById('accept-cookies');
+            const privacyConsent = localStorage.getItem('privacy_consent');
+    
+            // If consent has not been given, show the banner
+            if (privacyConsent !== 'accepted') {
+                if (consentBanner) {
+                     consentBanner.style.display = 'flex'; // Use flex to easily center content with justify-center
+                     consentBanner.style.justifyContent = 'center'; // Center horizontally
+                     consentBanner.style.alignItems = 'center'; // Center vertically
+                }
+            } else {
+                // If consent has been given, hide the banner
+                if (consentBanner) {
+                    consentBanner.style.display = 'none';
+                }
+            }
+    
+            // When the accept button is clicked
+            if (acceptButton) {
+                acceptButton.addEventListener('click', () => {
+                    // Hide the banner
+                    if (consentBanner) {
+                        consentBanner.style.display = 'none';
+                    }
+                    // Store the consent in localStorage
+                    localStorage.setItem('privacy_consent', 'accepted');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

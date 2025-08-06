@@ -23,7 +23,7 @@
 
     # Enable previews
     previews = {
-      enable = true;
+      enable = false;
       previews = {
         web = {
           command = ["firebase" "serve" "--only" "hosting" "--port" "$PORT"];
