@@ -1,0 +1,12 @@
+{
+  "routes": [
+    { "route": "/", "serve": "/index.html" }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*", "/*.{css,js,png,jpg,ico,svg,webp,txt,json}"]
+  },
+  "responseOverrides": {
+    "404": { "rewrite": "/index.html" }
+  }
+}
