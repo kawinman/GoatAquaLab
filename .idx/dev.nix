@@ -12,6 +12,7 @@
     # pkgs.nodejs_20
     # pkgs.nodePackages.nodemon
     pkgs.libwebp
+    pkgs.imagemagick
   ];
 
   # Sets environment variables in the workspace
