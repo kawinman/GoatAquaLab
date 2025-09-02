@@ -81,10 +81,14 @@
             background-image: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('https://storage.googleapis.com/gemini-prod-us-west4-f2-public/scape/hero_bg.jpg');
             background-size: cover;
             background-position: center;
+            min-height: 100vh;
         }
         .product-card {
             transition: all 0.3s ease-in-out;
             border-bottom: 5px solid transparent;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .product-card:hover {
             transform: translateY(-10px);
@@ -93,10 +97,72 @@
         .g1-card:hover { border-color: #3b82f6; }
         .g2-card:hover { border-color: #22c55e; }
         .g3-card:hover { border-color: #fbbf24; }
+        
+        /* System section card alignment */
+        .system-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .system-card .bottle-mockup {
+            flex-shrink: 0;
+        }
+        
+        .system-card h3 {
+            flex-shrink: 0;
+        }
+        
+        .system-card .formula-text {
+            flex-shrink: 0;
+        }
+        
+        .system-card .description {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        /* Responsive system section */
+        @media (max-width: 768px) {
+            .system-section .flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .system-section .product-card {
+                padding: 1rem;
+                width: 100%;
+            }
+            .system-section .bottle-mockup {
+                width: 60px;
+                height: 120px;
+            }
+            .system-section h3 {
+                font-size: 1.125rem;
+            }
+            .system-section .formula-text {
+                font-size: 0.875rem;
+            }
+            .system-section .description {
+                font-size: 0.75rem;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .system-section .flex {
+                flex-direction: row;
+            }
+            .system-section .product-card {
+                flex: 1;
+                max-width: calc(33.333% - 1rem);
+            }
+        }
+        
+
 
         .bottle-mockup {
-            width: 100px;
-            height: 200px;
+            width: 80px;
+            height: 160px;
             background-color: #fff;
             border: 2px solid #e2e8f0;
             border-radius: 15px 15px 8px 8px;
@@ -104,50 +170,94 @@
             margin: auto;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+        @media (min-width: 768px) {
+            .bottle-mockup {
+                width: 100px;
+                height: 200px;
+            }
+        }
         .bottle-cap {
-            width: 50px;
-            height: 15px;
+            width: 40px;
+            height: 12px;
             background-color: #e5e7eb;
             border-radius: 5px 5px 0 0;
             position: absolute;
-            top: -15px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
+        }
+        @media (min-width: 768px) {
+            .bottle-cap {
+                width: 50px;
+                height: 15px;
+                top: -15px;
+            }
         }
         .bottle-pump-neck {
-            width: 10px;
-            height: 20px;
+            width: 8px;
+            height: 16px;
             background-color: #e5e7eb;
             position: absolute;
-            top: -35px;
+            top: -28px;
             left: 50%;
             transform: translateX(-50%);
         }
+        @media (min-width: 768px) {
+            .bottle-pump-neck {
+                width: 10px;
+                height: 20px;
+                top: -35px;
+            }
+        }
          .bottle-pump-head {
-            width: 40px;
-            height: 10px;
+            width: 32px;
+            height: 8px;
             background-color: #e5e7eb;
             border-radius: 3px;
             position: absolute;
-            top: -45px;
+            top: -36px;
             left: 50%;
             transform: translateX(-50%);
         }
+        @media (min-width: 768px) {
+            .bottle-pump-head {
+                width: 40px;
+                height: 10px;
+                top: -45px;
+            }
+        }
         .bottle-label {
             position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
             text-align: center;
+        }
+        @media (min-width: 768px) {
+            .bottle-label {
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+            }
         }
         .bottle-label-name {
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             line-height: 1;
         }
+        @media (min-width: 768px) {
+            .bottle-label-name {
+                font-size: 1.5rem;
+            }
+        }
         .bottle-label-formula {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 500;
+        }
+        @media (min-width: 768px) {
+            .bottle-label-formula {
+                font-size: 0.7rem;
+            }
         }
         .g1-color { color: #3b82f6; }
         .g2-color { color: #22c55e; }
@@ -161,17 +271,23 @@
         /* New Dropper Bottle Styles */
         .dropper-container {
             position: relative;
-            width: 100px;
-            height: 200px;
+            width: 80px;
+            height: 160px;
             margin: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
         }
+        @media (min-width: 768px) {
+            .dropper-container {
+                width: 100px;
+                height: 200px;
+            }
+        }
         .dropper-bottle-body {
-            width: 80px;
-            height: 120px;
+            width: 64px;
+            height: 96px;
             background-color: rgba(255, 255, 255, 0.7);
             border: 2px solid #d1d5db;
             border-radius: 10px 10px 5px 5px;
@@ -180,44 +296,77 @@
             backdrop-filter: blur(1px);
             overflow: hidden;
         }
+        @media (min-width: 768px) {
+            .dropper-bottle-body {
+                width: 80px;
+                height: 120px;
+            }
+        }
         .dropper-cap-assembly {
             position: absolute;
-            top: 45px; /* Adjusted position */
+            top: 36px; /* Adjusted position */
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
+            width: 32px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+        @media (min-width: 768px) {
+            .dropper-cap-assembly {
+                top: 45px;
+                width: 40px;
+            }
+        }
         .dropper-bulb {
-            width: 30px;
-            height: 30px;
-            background: radial-gradient(circle at 10px 10px, #e0e0e0, #9e9e9e);
+            width: 24px;
+            height: 24px;
+            background: radial-gradient(circle at 8px 8px, #e0e0e0, #9e9e9e);
             border-radius: 50%;
             z-index: 10;
             border: 1px solid #757575;
         }
+        @media (min-width: 768px) {
+            .dropper-bulb {
+                width: 30px;
+                height: 30px;
+                background: radial-gradient(circle at 10px 10px, #e0e0e0, #9e9e9e);
+            }
+        }
         .dropper-cap {
-            width: 40px;
-            height: 15px;
+            width: 32px;
+            height: 12px;
             background: linear-gradient(to right, #bdbdbd, #f5f5f5, #bdbdbd);
             border-radius: 3px;
-            margin-top: -5px;
+            margin-top: -4px;
             z-index: 5;
             border-left: 1px solid #9e9e9e;
             border-right: 1px solid #9e9e9e;
         }
+        @media (min-width: 768px) {
+            .dropper-cap {
+                width: 40px;
+                height: 15px;
+                margin-top: -5px;
+            }
+        }
         .dropper-pipette {
-            width: 4px;
-            height: 90px;
+            width: 3px;
+            height: 72px;
             background-color: rgba(224, 224, 224, 0.5);
             position: absolute;
-            bottom: 5px;
+            bottom: 4px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
             border-radius: 2px;
+        }
+        @media (min-width: 768px) {
+            .dropper-pipette {
+                width: 4px;
+                height: 90px;
+                bottom: 5px;
+            }
         }
         .dropper-label {
             width: 100%;
@@ -229,12 +378,22 @@
         }
         .dropper-label-name {
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             line-height: 1;
         }
+        @media (min-width: 768px) {
+            .dropper-label-name {
+                font-size: 1.5rem;
+            }
+        }
         .dropper-label-formula {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 500;
+        }
+        @media (min-width: 768px) {
+            .dropper-label-formula {
+                font-size: 0.7rem;
+            }
         }
         .vital-booster-color { color: #ED46AB; }
 
@@ -278,6 +437,69 @@
             margin-right: auto;
             height: 250px;
         }
+
+        /* Responsive improvements */
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .hero-section h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            .hero-section p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            .product-card {
+                padding: 1.5rem;
+            }
+            .bottle-mockup, .dropper-container {
+                width: 60px;
+                height: 120px;
+            }
+            .bottle-label-name {
+                font-size: 1rem;
+            }
+            .bottle-label-formula {
+                font-size: 0.5rem;
+            }
+        }
+
+        /* Chart responsiveness */
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 200px;
+            }
+        }
+
+        /* Slideshow improvements */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                aspect-ratio: 4 / 3;
+            }
+        }
+
+        /* Accordion improvements */
+        .accordion-header:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Cookie banner improvements */
+        #cookie-consent-banner {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        @media (min-width: 640px) {
+            #cookie-consent-banner {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -300,67 +522,67 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section relative h-screen flex flex-col justify-center items-center text-white text-center p-4">
-        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" alt="G.O.A.T Aqua Lab Logo" class="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-lg mb-4" width="256" height="256">
-        <h1 class="text-4xl md:text-6xl font-extrabold" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">G.O.A.T Aqua Lab</h1>
-        <p class="text-lg md:text-2xl mt-4 max-w-3xl">โซลูชันที่สมบูรณ์แบบสำหรับทุกช่วงวัยของตู้ไม้น้ำ<br>เพื่อผลลัพธ์ระดับมืออาชีพที่"ง่าย"กว่าเดิม</p>
-        <p class="text-base text-white text-opacity-90 mt-3" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">ผลิตในประเทศไทย</p>
+    <section class="hero-section relative min-h-screen flex flex-col justify-center items-center text-white text-center p-4 sm:p-6 md:p-8">
+        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" alt="G.O.A.T Aqua Lab Logo" class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full shadow-lg mb-4" width="256" height="256">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold px-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">G.O.A.T Aqua Lab</h1>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl mt-4 max-w-4xl px-4 leading-relaxed">โซลูชันที่สมบูรณ์แบบสำหรับทุกช่วงวัยของตู้ไม้น้ำ<br class="hidden sm:block">เพื่อผลลัพธ์ระดับมืออาชีพที่"ง่าย"กว่าเดิม</p>
+        <p class="text-sm sm:text-base text-white text-opacity-90 mt-3 px-4" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">ผลิตในประเทศไทย</p>
 
         <a href="blogs.html"
            onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'Blog_CTA_Click'});"
-           class="inline-block mt-8 bg-black bg-opacity-20 backdrop-blur-sm border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-slate-800 transition-all duration-300 transform hover:scale-105">
+           class="inline-block mt-6 sm:mt-8 bg-black bg-opacity-20 backdrop-blur-sm border-2 border-white text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg hover:bg-white hover:text-slate-800 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
             เคล็ดลับและบทความจากเรา
         </a>
     </section>
 
     <!-- The System Section -->
-    <section class="py-16 md:py-24 bg-slate-50">
+    <section class="py-16 md:py-24 bg-slate-50 system-section">
         <div class="container mx-auto px-6">
             <header class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800">The G.O.A.T Aqua Lab System</h2>
                 <p class="text-lg text-slate-500 mt-2">3 ขั้นตอนง่ายๆ เพื่อตู้ไม้น้ำที่สวยงามและยั่งยืน</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-row gap-8 justify-center">
                 <a href="g1-details.html" class="block no-underline text-current">
-                    <div class="product-card bg-white rounded-lg p-8 text-center g1-card h-full">
-                        <div class="bottle-mockup">
+                    <div class="product-card bg-white rounded-lg p-8 text-center g1-card h-full system-card">
+                        <div class="bottle-mockup mb-6">
                             <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
                             <div class="bottle-label">
                                 <p class="bottle-label-name g1-color">G1</p>
                                 <p class="bottle-label-formula g1-color">Bright</p>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-blue-600 mt-6"><a href="puvai-mai-nam.html" class="hover:underline">ปุ๋ยไม้น้ำ</a> G1 Bright</h3>
-                        <p class="font-semibold text-blue-500">Starter Formula</p>
-                        <p class="text-sm text-slate-600 mt-4">สำหรับตู้ตั้งใหม่ (0-3 เดือน) และพืชโตช้า เป็น สูตร N-P Free ช่วยให้พืชแข็งแรง สร้างสีสันสดใส และลดความเสี่ยงตะไคร่</p>
+                        <h3 class="text-2xl font-bold text-blue-600 mb-2"><a href="puvai-mai-nam.html" class="hover:underline">ปุ๋ยไม้น้ำ</a> G1 Bright</h3>
+                        <p class="font-semibold text-blue-500 mb-4 formula-text">Starter Formula</p>
+                        <p class="text-sm text-slate-600 description">สำหรับตู้ตั้งใหม่ (0-3 เดือน) และพืชโตช้า เป็น สูตร N-P Free ช่วยให้พืชแข็งแรง สร้างสีสันสดใส และลดความเสี่ยงตะไคร่</p>
                     </div>
                 </a>
                 <a href="g2-details.html" class="block no-underline text-current">
-                    <div class="product-card bg-white rounded-lg p-8 text-center g2-card h-full">
-                        <div class="bottle-mockup">
+                    <div class="product-card bg-white rounded-lg p-8 text-center g2-card h-full system-card">
+                        <div class="bottle-mockup mb-6">
                             <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
                              <div class="bottle-label">
                                 <p class="bottle-label-name g2-color">G2</p>
                                 <p class="bottle-label-formula g2-color">Active</p>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-green-600 mt-6"><a href="puvai-mai-nam.html" class="hover:underline">ปุ๋ยไม้น้ำ</a> G2 Active</h3>
-                        <p class="font-semibold text-green-500">Peak Growth Formula</p>
-                        <p class="text-sm text-slate-600 mt-4">สำหรับช่วงเร่งโต (3-12 เดือน) สูตรอาหารมื้อหลักที่ครบถ้วนทั้ง NPK และจุลธาตุ เพื่อเร่งการเติบโต แตกกอหนาแน่น และขับสีสันให้สดใสเต็มที่</p>
+                        <h3 class="text-2xl font-bold text-green-600 mb-2"><a href="puvai-mai-nam.html" class="hover:underline">ปุ๋ยไม้น้ำ</a> G2 Active</h3>
+                        <p class="font-semibold text-green-500 mb-4 formula-text">Peak Growth Formula</p>
+                        <p class="text-sm text-slate-600 description">สำหรับช่วงเร่งโต (3-12 เดือน) สูตรอาหารมื้อหลักที่ครบถ้วนทั้ง NPK และจุลธาตุ เพื่อเร่งการเติบโต แตกกอหนาแน่น และขับสีสันให้สดใสเต็มที่</p>
                     </div>
                 </a>
                 <a href="g3-details.html" class="block no-underline text-current">
-                    <div class="product-card bg-white rounded-lg p-8 text-center g3-card h-full">
-                        <div class="bottle-mockup">
+                    <div class="product-card bg-white rounded-lg p-8 text-center g3-card h-full system-card">
+                        <div class="bottle-mockup mb-6">
                             <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
                              <div class="bottle-label">
                                 <p class="bottle-label-name g3-color">G3</p>
                                 <p class="bottle-label-formula g3-color">Sustain</p>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-amber-500 mt-6"><a href="puvai-mai-nam.html" class="hover:underline">ปุ๋ยไม้น้ำ</a> G3 Sustain</h3>
-                        <p class="font-semibold text-amber-400">Maintenance Formula</p>
-                        <p class="text-sm text-slate-600 mt-4">สำหรับตู้ที่สมบูรณ์แล้ว (12+ เดือน) สูตร Lean Dosing ที่ช่วยชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสีสันและความสมบูรณ์ไว้</p>
+                        <h3 class="text-2xl font-bold text-amber-500 mb-2"><a href="puvai-mai-nam.html" class="hover:underline">ปุ๋ยไม้น้ำ</a> G3 Sustain</h3>
+                        <p class="font-semibold text-amber-400 mb-4 formula-text">Maintenance Formula</p>
+                        <p class="text-sm text-slate-600 description">สำหรับตู้ที่สมบูรณ์แล้ว (12+ เดือน) สูตร Lean Dosing ที่ช่วยชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสีสันและความสมบูรณ์ไว้</p>
                     </div>
                 </a>
             </div>
@@ -368,46 +590,46 @@
     </section>
     
     <!-- System Overview Section -->
-    <section id="system-overview" class="py-16 md:py-24 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <header class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">ภาพรวมเส้นทางการดูแล</h2>
-                <p class="text-lg text-slate-500 mt-2">จากเริ่มต้นจนสวยงามยั่งยืนด้วยระบบของ G.O.A.T Aqua Lab</p>
+    <section id="system-overview" class="py-12 sm:py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <header class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 px-4">ภาพรวมเส้นทางการดูแล</h2>
+                <p class="text-base sm:text-lg text-slate-500 mt-2 px-4">จากเริ่มต้นจนสวยงามยั่งยืนด้วยระบบของ G.O.A.T Aqua Lab</p>
             </header>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+            <div class="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 mx-4 sm:mx-0">
                 <div class="relative">
                     <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2"></div>
                     <div class="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2" style="background: linear-gradient(to right, #3b82f6, #22c55e, #fbbf24);"></div>
                     <div class="relative flex justify-between">
-                        <div class="text-center w-1/3">
-                            <div class="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G1</div>
-                            <h3 class="mt-2 font-bold text-blue-600">Foundation</h3>
+                        <div class="text-center w-1/3 px-1">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-blue-500 text-white flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold mx-auto border-2 sm:border-4 border-white shadow">G1</div>
+                            <h3 class="mt-2 font-bold text-blue-600 text-sm sm:text-base">Foundation</h3>
                             <p class="text-xs text-slate-500">0-3 เดือน</p>
                         </div>
-                         <div class="text-center w-1/3">
-                            <div class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G2</div>
-                            <h3 class="mt-2 font-bold text-green-600">Peak Growth</h3>
+                         <div class="text-center w-1/3 px-1">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold mx-auto border-2 sm:border-4 border-white shadow">G2</div>
+                            <h3 class="mt-2 font-bold text-green-600 text-sm sm:text-base">Peak Growth</h3>
                             <p class="text-xs text-slate-500">3-12 เดือน</p>
                         </div>
-                         <div class="text-center w-1/3">
-                            <div class="w-14 h-14 rounded-full bg-amber-400 text-white flex items-center justify-center text-2xl font-bold mx-auto border-4 border-white shadow">G3</div>
-                            <h3 class="mt-2 font-bold text-amber-500">Maintenance</h3>
+                         <div class="text-center w-1/3 px-1">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-amber-400 text-white flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold mx-auto border-2 sm:border-4 border-white shadow">G3</div>
+                            <h3 class="mt-2 font-bold text-amber-500 text-sm sm:text-base">Maintenance</h3>
                             <p class="text-xs text-slate-500">12+ เดือน</p>
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-center">
-                    <div class="border-t-4 border-blue-500 pt-4">
-                        <h4 class="font-semibold">G1 Bright (K + Micro) </h4>
-                        <p class="text-sm text-slate-600 mt-1">บำรุงไม้น้ำให้แข็งแรง สร้างสีสันสดใส และลดความเสี่ยงตะไคร่สำหรับตู้ตั้งใหม่และตู้พืชโตช้า</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8 text-center">
+                    <div class="border-t-4 border-blue-500 pt-4 flex flex-col h-full">
+                        <h4 class="font-semibold text-sm sm:text-base mb-2">G1 Bright (K + Micro)</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 flex-grow">บำรุงไม้น้ำให้แข็งแรง สร้างสีสันสดใส และลดความเสี่ยงตะไคร่สำหรับตู้ตั้งใหม่และตู้พืชโตช้า</p>
                     </div>
-                    <div class="border-t-4 border-green-500 pt-4">
-                        <h4 class="font-semibold">G2 Active (NPK + Micro) </h4>
-                        <p class="text-sm text-slate-600 mt-1">อาหารมื้อหลักที่ครบถ้วนสำหรับช่วงเร่งโตเต็มที่ เพิ่มความหนาแน่นและขับสีสันให้สดใส</p>
+                    <div class="border-t-4 border-green-500 pt-4 flex flex-col h-full">
+                        <h4 class="font-semibold text-sm sm:text-base mb-2">G2 Active (NPK + Micro)</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 flex-grow">อาหารมื้อหลักที่ครบถ้วนสำหรับช่วงเร่งโตเต็มที่ เพิ่มความหนาแน่นและขับสีสันให้สดใส</p>
                     </div>
-                    <div class="border-t-4 border-amber-400 pt-4">
-                        <h4 class="font-semibold">G3 Sustain (NPK + Micro) </h4>
-                        <p class="text-sm text-slate-600 mt-1">สูตรดูแลระยะยาวที่ชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสุขภาพและสีสันของตู้ที่สมบูรณ์แล้ว</p>
+                    <div class="border-t-4 border-amber-400 pt-4 flex flex-col h-full">
+                        <h4 class="font-semibold text-sm sm:text-base mb-2">G3 Sustain (NPK + Micro)</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 flex-grow">สูตรดูแลระยะยาวที่ชะลอการโต ลดภาระการตัดแต่ง แต่ยังคงรักษาสุขภาพและสีสันของตู้ที่สมบูรณ์แล้ว</p>
                     </div>
                 </div>
             </div>
@@ -415,101 +637,220 @@
     </section>
 
     <!-- Other Products Section -->
-    <section id="other-products" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <header class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">ผลิตภัณฑ์อื่นๆของเรา</h2>
-                <p class="text-lg text-slate-500 mt-2">เสริมความสมบูรณ์แบบให้ตู้ของคุณ</p>
+    <section id="other-products" class="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <header class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">ผลิตภัณฑ์อื่นๆของเรา</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">เสริมความสมบูรณ์แบบให้ตู้ของคุณด้วยผลิตภัณฑ์คุณภาพสูงที่ออกแบบมาเพื่อผลลัพธ์ที่ดีที่สุด</p>
             </header>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <a href="carbon-plus-details.html" class="block no-underline text-current">
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
-                        <div class="bottle-mockup mb-4">
-                            <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
-                            <div class="bottle-label">
-                                <p class="bottle-label-name c-plus-color" style="font-size: 1rem;">Carbon+</p>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-700">Carbon+</h3>
-                        <p class="text-sm text-slate-500 mt-2"><a href="puvai-mai-nam.html" class="text-green-600 hover:underline">คาร์บอนน้ำ</a>คุณภาพสูง ช่วยเสริมการสังเคราะห์แสงและยับยั้งตะไคร่</p>
-                    </div>
-                </a>
-                <a href="alclear-details.html" class="block no-underline text-current">
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
-                        <div class="bottle-mockup mb-4">
-                            <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
-                            <div class="bottle-label">
-                                <p class="bottle-label-name alclear-color" style="font-size: 1rem;">AlClear</p>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-700">AlClear</h3>
-                        <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์กำจัดตะไคร่อย่างเร่งด่วน (กำลังทดสอบ)</p>
-                    </div>
-                </a>
-                <a href="vitality-booster-details.html" class="block no-underline text-current">
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
-                        <div class="dropper-container mb-4">
-                            <div class="dropper-cap-assembly">
-                                <div class="dropper-bulb"></div>
-                                <div class="dropper-cap"></div>
-                            </div>
-                            <div class="dropper-bottle-body">
-                                <div class="dropper-pipette"></div>
-                                <div class="dropper-label">
-                                    <p class="dropper-label-name vital-booster-color" style="font-size: 1rem;">Vital Booster</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Carbon+ -->
+                <div class="group">
+                    <a href="carbon-plus-details.html" class="block no-underline text-current">
+                        <div class="bg-white rounded-2xl shadow-lg border-0 p-6 h-full transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:-translate-y-2">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-center mb-6">
+                                    <div class="bottle-mockup">
+                                        <div class="bottle-cap"></div>
+                                        <div class="bottle-pump-neck"></div>
+                                        <div class="bottle-pump-head"></div>
+                                        <div class="bottle-label">
+                                            <p class="bottle-label-name c-plus-color" style="font-size: 0.875rem;">Carbon+</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-3">Carbon+</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">คาร์บอนน้ำคุณภาพสูง ช่วยเสริมการสังเคราะห์แสงและยับยั้งตะไคร่</p>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-slate-100">
+                                    <span class="inline-flex items-center text-green-600 text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        คาร์บอนน้ำ
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-700">Vital Booster</h3>
-                        <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์กระตุ้นการแตกยอดและเติบโตของพืชน้ำ (กำลังทดสอบ)</p>
-                    </div>
-                </a>
-                <a href="go2-dropchecker-details.html" class="block no-underline text-current">
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
-                        <div class="dropper-container mb-4">
-                            <div class="dropper-cap-assembly">
-                                <div class="dropper-bulb"></div>
-                                <div class="dropper-cap"></div>
-                            </div>
-                            <div class="dropper-bottle-body">
-                                <div class="dropper-pipette"></div>
-                                <div class="dropper-label">
-                                    <p class="dropper-label-name go2-drop-checker" style="font-size: 1rem;">GO₂ Drop Checker</p>
+                    </a>
+                </div>
+
+                <!-- AlClear -->
+                <div class="group">
+                    <a href="alclear-details.html" class="block no-underline text-current">
+                        <div class="bg-white rounded-2xl shadow-lg border-0 p-6 h-full transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:-translate-y-2">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-center mb-6">
+                                    <div class="bottle-mockup">
+                                        <div class="bottle-cap"></div>
+                                        <div class="bottle-pump-neck"></div>
+                                        <div class="bottle-pump-head"></div>
+                                        <div class="bottle-label">
+                                            <p class="bottle-label-name alclear-color" style="font-size: 0.875rem;">AlClear</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-3">AlClear</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">ผลิตภัณฑ์กำจัดตะไคร่อย่างเร่งด่วน (กำลังทดสอบ)</p>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-slate-100">
+                                    <span class="inline-flex items-center text-orange-600 text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        กำจัดตะไคร่
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-700">GO₂ Drop Checker Solution</h3>
-                        <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์วัดค่าคาร์บอนไดออกไซด์ (CO₂) ในตู้ไม้น้ำ </p>
-                    </div>
-                </a> 
-                <a href="gh-plus-details.html" class="block no-underline text-current">
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
-                        <div class="bottle-mockup mb-4">
-                            <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
-                            <div class="bottle-label">
-                                <p class="bottle-label-name gh-plus-color" style="font-size: 1rem;">GH+</p>
+                    </a>
+                </div>
+
+                <!-- Vital Booster -->
+                <div class="group">
+                    <a href="vitality-booster-details.html" class="block no-underline text-current">
+                        <div class="bg-white rounded-2xl shadow-lg border-0 p-6 h-full transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:-translate-y-2">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-center mb-6">
+                                    <div class="dropper-container">
+                                        <div class="dropper-cap-assembly">
+                                            <div class="dropper-bulb"></div>
+                                            <div class="dropper-cap"></div>
+                                        </div>
+                                        <div class="dropper-bottle-body">
+                                            <div class="dropper-pipette"></div>
+                                            <div class="dropper-label">
+                                                <p class="dropper-label-name vital-booster-color" style="font-size: 0.75rem;">Vital Booster</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-3">Vital Booster</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">ผลิตภัณฑ์กระตุ้นการแตกยอดและเติบโตของพืชน้ำ (กำลังทดสอบ)</p>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-slate-100">
+                                    <span class="inline-flex items-center text-pink-600 text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        กระตุ้นการเติบโต
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-700">GH+</h3>
-                        <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์เพิ่มค่าความกระด้างรวม (GH)</p>
-                    </div>
-                </a>
-                <a href="kh-plus-details.html" class="block no-underline text-current">
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 text-center hover:shadow-md transition-shadow h-full">
-                        <div class="bottle-mockup mb-4">
-                            <div class="bottle-cap"></div><div class="bottle-pump-neck"></div><div class="bottle-pump-head"></div>
-                            <div class="bottle-label">
-                                <p class="bottle-label-name kh-plus-color" style="font-size: 1rem;">KH+</p>
+                    </a>
+                </div>
+
+                <!-- GO₂ Drop Checker -->
+                <div class="group">
+                    <a href="go2-dropchecker-details.html" class="block no-underline text-current">
+                        <div class="bg-white rounded-2xl shadow-lg border-0 p-6 h-full transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:-translate-y-2">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-center mb-6">
+                                    <div class="dropper-container">
+                                        <div class="dropper-cap-assembly">
+                                            <div class="dropper-bulb"></div>
+                                            <div class="dropper-cap"></div>
+                                        </div>
+                                        <div class="dropper-bottle-body">
+                                            <div class="dropper-pipette"></div>
+                                            <div class="dropper-label">
+                                                <p class="dropper-label-name go2-drop-checker" style="font-size: 0.7rem;">GO₂ Drop Checker</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-3">GO₂ Drop Checker</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">ผลิตภัณฑ์วัดค่าคาร์บอนไดออกไซด์ (CO₂) ในตู้ไม้น้ำ</p>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-slate-100">
+                                    <span class="inline-flex items-center text-blue-600 text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        วัดค่า CO₂
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-700">KH+</h3>
-                        <p class="text-sm text-slate-500 mt-2">ผลิตภัณฑ์เพิ่มค่าความกระด้างคาร์บอเนต (KH)</p>
-                    </div>
-                </a>                
+                    </a>
+                </div>
+
+                <!-- GH+ -->
+                <div class="group">
+                    <a href="gh-plus-details.html" class="block no-underline text-current">
+                        <div class="bg-white rounded-2xl shadow-lg border-0 p-6 h-full transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:-translate-y-2">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-center mb-6">
+                                    <div class="bottle-mockup">
+                                        <div class="bottle-cap"></div>
+                                        <div class="bottle-pump-neck"></div>
+                                        <div class="bottle-pump-head"></div>
+                                        <div class="bottle-label">
+                                            <p class="bottle-label-name gh-plus-color" style="font-size: 0.875rem;">GH+</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-3">GH+</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">ผลิตภัณฑ์เพิ่มค่าความกระด้างรวม (GH)</p>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-slate-100">
+                                    <span class="inline-flex items-center text-teal-600 text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        เพิ่มความกระด้าง
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- KH+ -->
+                <div class="group">
+                    <a href="kh-plus-details.html" class="block no-underline text-current">
+                        <div class="bg-white rounded-2xl shadow-lg border-0 p-6 h-full transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:-translate-y-2">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-center mb-6">
+                                    <div class="bottle-mockup">
+                                        <div class="bottle-cap"></div>
+                                        <div class="bottle-pump-neck"></div>
+                                        <div class="bottle-pump-head"></div>
+                                        <div class="bottle-label">
+                                            <p class="bottle-label-name kh-plus-color" style="font-size: 0.875rem;">KH+</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-800 mb-3">KH+</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">ผลิตภัณฑ์เพิ่มค่าความกระด้างคาร์บอเนต (KH)</p>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-slate-100">
+                                    <span class="inline-flex items-center text-indigo-600 text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        เพิ่มความกระด้าง
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <div class="text-center mt-12">
-                <a href="products.html" class="inline-block bg-slate-800 text-white font-semibold py-3 px-8 rounded-lg hover:bg-slate-700 transition-colors">
+            <div class="text-center mt-12 md:mt-16">
+                <a href="products.html" class="inline-flex items-center bg-gradient-to-r from-slate-800 to-slate-700 text-white font-semibold py-3 px-8 rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0l-7-7m7 7l-7 7"></path>
+                    </svg>
                     ดูผลิตภัณฑ์ทั้งหมด
                 </a>
             </div>
@@ -517,57 +858,57 @@
     </section>
 
     <!-- Shopee CTA Section -->
-    <section class="py-16 md:py-24 bg-slate-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-800">หาซื้อผลิตภัณฑ์ของเราได้ที่</h2>
-            <p class="text-lg text-slate-500 mt-2 mb-8">คลิกเพื่อไปยังร้านค้าอย่างเป็นทางการของเราบน Shopee</p>
+    <section class="py-12 sm:py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 px-4">หาซื้อผลิตภัณฑ์ของเราได้ที่</h2>
+            <p class="text-base sm:text-lg text-slate-500 mt-2 mb-6 sm:mb-8 px-4">คลิกเพื่อไปยังร้านค้าอย่างเป็นทางการของเราบน Shopee</p>
             <a href="https://shopee.co.th/goataqualab" target="_blank" rel="noopener noreferrer"
                 onclick="gtag('event', 'click', {'event_category': 'outbound', 'event_label': 'Shop_Shopee_Link_Click'});"
-                class="inline-block bg-orange-500 text-white text-lg font-bold py-4 px-10 rounded-lg hover:bg-orange-600 transition-transform transform hover:scale-105">
+                class="inline-block bg-orange-500 text-white text-base sm:text-lg font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-lg hover:bg-orange-600 transition-transform transform hover:scale-105">
                 Shop on Shopee
             </a>
         </div>
     </section>
 
     <!-- Market Analysis Section -->
-    <section id="market-analysis" class="py-16 md:py-24 bg-slate-50">
-        <div class="container mx-auto px-6">
-             <header class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">การเปรียบเทียบกับแบรนด์อื่นๆ</h2>
-                <p class="text-lg text-slate-500 mt-2">เปรียบเทียบจุดยืนของ G1 Bright กับชุดเริ่มต้นของแบรนด์อื่นๆในตลาด</p>
+    <section id="market-analysis" class="py-12 sm:py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6">
+             <header class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 px-4">การเปรียบเทียบกับแบรนด์อื่นๆ</h2>
+                <p class="text-base sm:text-lg text-slate-500 mt-2 px-4">เปรียบเทียบจุดยืนของ G1 Bright กับชุดเริ่มต้นของแบรนด์อื่นๆในตลาด</p>
             </header>
-             <div class="bg-white p-6 rounded-xl">
-                <h3 class="text-lg font-bold mb-4 text-center">เปรียบเทียบ "จำนวนขวดที่ต้องซื้อ" สำหรับตู้เริ่มต้น</h3>
+             <div class="bg-white p-4 sm:p-6 rounded-xl mx-4 sm:mx-0">
+                <h3 class="text-base sm:text-lg font-bold mb-4 text-center">เปรียบเทียบ "จำนวนขวดที่ต้องซื้อ" สำหรับตู้เริ่มต้น</h3>
                 <div class="chart-container">
                     <canvas id="bottleComparisonChart"></canvas>
                 </div>
-                <p class="text-center text-sm text-slate-600 mt-4">G1 G2 G3 คือโซลูชัน **ขวดเดียวจบ** ที่ให้ผลลัพธ์เทียบเท่ากับระบบที่ซับซ้อนและต้องซื้อหลายขวดของแบรนด์อื่นๆ</p>
+                <p class="text-center text-xs sm:text-sm text-slate-600 mt-4 px-4">G1 G2 G3 คือโซลูชัน **ขวดเดียวจบ** ที่ให้ผลลัพธ์เทียบเท่ากับระบบที่ซับซ้อนและต้องซื้อหลายขวดของแบรนด์อื่นๆ</p>
              </div>
         </div>
     </section>
 
     <!-- The Science Section -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <header class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">The Science Behind G.O.A.T.</h2>
-                <p class="text-lg text-slate-500 mt-2">เราแตกต่่างจากผลิตภัณฑ์อื่นๆอย่างไร</p>
+    <section class="py-12 sm:py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <header class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 px-4">The Science Behind G.O.A.T.</h2>
+                <p class="text-base sm:text-lg text-slate-500 mt-2 px-4">เราแตกต่่างจากผลิตภัณฑ์อื่นๆอย่างไร</p>
             </header>
-            <div class="max-w-3xl mx-auto space-y-4" id="accordion-container">
+            <div class="max-w-3xl mx-auto space-y-4 px-4 sm:px-0" id="accordion-container">
             </div>
         </div>
     </section>
     
     <!-- Showcase Section -->
-    <section class="py-16 md:py-24 bg-slate-100">
-        <div class="container mx-auto px-6">
-             <header class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800">Real World Results</h2>
-                <p class="text-lg text-slate-500 mt-2">ผลลัพธ์จริงจากตู้ของเรา</p>
+    <section class="py-12 sm:py-16 md:py-24 bg-slate-100">
+        <div class="container mx-auto px-4 sm:px-6">
+             <header class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 px-4">Real World Results</h2>
+                <p class="text-base sm:text-lg text-slate-500 mt-2 px-4">ผลลัพธ์จริงจากตู้ของเรา</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div>
-                    <h3 class="text-xl font-semibold text-center text-slate-700 mb-4">ตู้ที่สมบูรณ์แล้ว</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-start">
+                <div class="px-4 sm:px-0">
+                    <h3 class="text-lg sm:text-xl font-semibold text-center text-slate-700 mb-4">ตู้ที่สมบูรณ์แล้ว</h3>
                     <div class="slideshow-container">
 <picture>
 <source srcset="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.webp" type="image/webp">
@@ -599,8 +940,8 @@
 </picture>
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-center text-slate-700 mb-4">ตู้ที่อยู่ระหว่างการทดลองผลิตภัณฑ์ใหม่ๆ</h3>
+                <div class="px-4 sm:px-0">
+                    <h3 class="text-lg sm:text-xl font-semibold text-center text-slate-700 mb-4">ตู้ที่อยู่ระหว่างการทดลองผลิตภัณฑ์ใหม่ๆ</h3>
                     <div class="slideshow-container">
 <picture>
 <source srcset="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_DB7F03A5-69BC-43CD-86E7-9E26C80CD70A.webp" type="image/webp">
@@ -625,13 +966,12 @@
                     </div>
                 </div>
             </div>
-             <p class="text-center mt-8 text-slate-600">"เราทดสอบและใช้งานผลิตภัณฑ์ของเรากับตู้จริงทุกวัน เพื่อให้มั่นใจว่าคุณจะได้รับผลลัพธ์ที่ดีที่สุด"</p>
+             <p class="text-center mt-6 sm:mt-8 text-slate-600 px-4 text-sm sm:text-base">"เราทดสอบและใช้งานผลิตภัณฑ์ของเรากับตู้จริงทุกวัน เพื่อให้มั่นใจว่าคุณจะได้รับผลลัพธ์ที่ดีที่สุด"</p>
         </div>
     </section>
     
-    <footer class="text-center py-8 bg-slate-800 text-slate-400">
-        
-        <p>&copy; 2024 G.O.A.T Aqua Lab. All Rights Reserved.</p>
+    <footer class="text-center py-6 sm:py-8 bg-slate-800 text-slate-400">
+        <p class="text-sm sm:text-base">&copy; 2024 G.O.A.T Aqua Lab. All Rights Reserved.</p>
     </footer>
 
     <script>
