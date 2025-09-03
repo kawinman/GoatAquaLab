@@ -211,5 +211,45 @@
     "title": "Flame Moss ไฟลุกพริ้วสวย: ทำทรงตั้งพุ่ง คุมความหนา และดูแลให้ยาวนาน",
     "description": "ติดให้ตั้งพุ่ง คุมความหนา ตัดแต่ง และคุมระบบให้ Flame Moss พริ้วคมไม่รกตา",
     "pinned": false
+  },
+  {
+    "url": "blogs/blog-post-31.html",
+    "image": "https://raw.githubusercontent.com/kawinman/GoatAquaLab/main/Amazon Sword.webp",
+    "date": "3 กันยายน 2025",
+    "title": "Plant Profile: Amazon Sword ไม้ใบใหญ่ทรงพลัง ปลูกอย่างไรให้โตเร็ว",
+    "description": "รู้จัก Amazon Sword ไม้น้ำใบใหญ่ที่ให้ความรู้สึกป่าดิบชื้น เรียนรู้วิธีปลูก ดูแล และทำให้โตเร็วด้วย G1/G2 และ Carbon+",
+    "pinned": false
+  },
+  {
+    "url": "blogs/blog-post-32.html",
+    "image": "https://raw.githubusercontent.com/kawinman/GoatAquaLab/main/anubias.webp",
+    "date": "4 กันยายน 2025",
+    "title": "Plant Profile: Anubias ไม้ใบหนาแข็งแรง เลี้ยงง่ายไม่ต้องการแสงมาก",
+    "description": "รู้จัก Anubias ไม้น้ำใบหนาแข็งแรงที่เลี้ยงง่าย ไม่ต้องการแสงมาก เหมาะสำหรับมือใหม่ เรียนรู้วิธีปลูกและดูแลให้สวยงาม",
+    "pinned": false
+  },
+  {
+    "url": "blogs/blog-post-33.html",
+    "image": "https://raw.githubusercontent.com/kawinman/GoatAquaLab/main/Water Wisteria.webp",
+    "date": "5 กันยายน 2025",
+    "title": "Plant Profile: Water Wisteria ไม้ใบละเอียดสวยงาม โตเร็วเหมาะสำหรับมือใหม่",
+    "description": "รู้จัก Water Wisteria ไม้น้ำใบละเอียดสวยงามที่โตเร็ว เหมาะสำหรับมือใหม่ เรียนรู้วิธีปลูกและดูแลให้สวยงาม",
+    "pinned": false
+  },
+  {
+    "url": "blogs/blog-post-34.html",
+    "image": "https://raw.githubusercontent.com/kawinman/GoatAquaLab/main/javafern.webp",
+    "date": "6 กันยายน 2025",
+    "title": "Plant Profile: Java Fern ไม้ใบแคบแข็งแรง เลี้ยงง่ายไม่ต้องการดิน",
+    "description": "รู้จัก Java Fern ไม้น้ำใบแคบแข็งแรงที่เลี้ยงง่าย ไม่ต้องการดิน สามารถผูกกับหินหรือไม้ได้ เรียนรู้วิธีปลูกและดูแลให้สวยงาม",
+    "pinned": false
+  },
+  {
+    "url": "blogs/blog-post-35.html",
+    "image": "https://raw.githubusercontent.com/kawinman/GoatAquaLab/main/IMG_4300.webp",
+    "date": "7 กันยายน 2025",
+    "title": "Plant Profile: Moss Collection มอสสวยงามสร้างบรรยากาศป่าดิบชื้น",
+    "description": "รู้จัก Moss Collection ประกอบด้วย Java Moss, Christmas Moss, และ Flame Moss ที่สร้างบรรยากาศป่าดิบชื้นในตู้ไม้น้ำ เรียนรู้วิธีปลูกและดูแลให้สวยงาม",
+    "pinned": false
   }
 ]
