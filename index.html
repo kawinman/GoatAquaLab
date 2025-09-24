@@ -17,6 +17,19 @@
     <link rel="mask-icon" href="/favicon_io/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    
+    <!-- Performance: Preload critical resources -->
+    <link rel="preload" href="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" as="image" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Performance: DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//raw.githubusercontent.com">
+    
     <!-- SEO: Canonical URL - Specifies the official version of the page -->
     <link rel="canonical" href="https://goataqualab.com/" /> <!-- Replace with your actual domain -->
     <meta name="robots" content="index, follow" />
@@ -66,23 +79,57 @@
       gtag('config', 'G-YGWN192F4B');
     </script>
     
+    <!-- Performance: Load critical CSS synchronously, non-critical JS async -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" async></script>
+    
+    <!-- Performance: Remove duplicate font loading (already handled above) -->
     <style>
+        /* Critical CSS for LCP optimization */
         body {
             font-family: 'Sarabun', sans-serif;
             background-color: #f8fafc;
             color: #1e293b;
+            margin: 0;
+            padding: 0;
         }
+        
+        /* Critical hero section styles - consolidated */
         .hero-section {
             background-image: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('https://storage.googleapis.com/gemini-prod-us-west4-f2-public/scape/hero_bg.jpg');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        /* Prevent layout shift */
+        .hero-section img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-section img {
+                width: 128px;
+                height: 128px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .hero-section img {
+                width: 160px;
+                height: 160px;
+            }
         }
         .product-card {
             transition: all 0.3s ease-in-out;
@@ -524,7 +571,7 @@
 
     <!-- Hero Section -->
     <section class="hero-section relative min-h-screen flex flex-col justify-center items-center text-white text-center p-4 sm:p-6 md:p-8">
-        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" alt="G.O.A.T Aqua Lab Logo" class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full shadow-lg mb-4" width="256" height="256">
+        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_3970.png" alt="G.O.A.T Aqua Lab Logo" class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full shadow-lg mb-4" width="256" height="256" fetchpriority="high" decoding="sync">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold px-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">G.O.A.T Aqua Lab</h1>
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl mt-4 max-w-4xl px-4 leading-relaxed">โซลูชันที่สมบูรณ์แบบสำหรับทุกช่วงวัยของตู้ไม้น้ำ<br class="hidden sm:block">เพื่อผลลัพธ์ระดับมืออาชีพที่"ง่าย"กว่าเดิม</p>
         <p class="text-sm sm:text-base text-white text-opacity-90 mt-3 px-4" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">ผลิตในประเทศไทย</p>
@@ -913,7 +960,7 @@
                     <div class="slideshow-container">
 <picture>
 <source srcset="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.webp" type="image/webp">
-                        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.JPG" alt="ตู้ไม้น้ำที่สมบูรณ์" class="slideshow-image active" loading="lazy" width="1920" height="1080">
+                        <img src="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/IMG_4288.JPG" alt="ตู้ไม้น้ำที่สมบูรณ์" class="slideshow-image active" loading="eager" fetchpriority="high" width="1920" height="1080">
 </picture>
 <picture>
 <source srcset="https://raw.githubusercontent.com/kawinman/GoatAquaLab/refs/heads/main/6293775B-352A-47A4-B214-2AFB96CE2E29.webp" type="image/webp">
