@@ -1077,31 +1077,41 @@
                 }
             });
 
-            // Market Analysis Chart
-            const ctxBottles = document.getElementById('bottleComparisonChart');
-            if(ctxBottles) {
-                new Chart(ctxBottles.getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: ['G.O.A.T Aqua Lab', 'แบรนด์ไทยอื่นๆ', 'Seach**', 'AD*'],
-                        datasets: [{
-                            label: 'จำนวนขวดที่ต้องซื้อ',
-                            data: [1, 2, 3, 3],
-                            backgroundColor: ['#22c55e', '#f59e0b', '#3b82f6', '#1e293b'],
-                            borderRadius: 4,
-                            borderWidth: 2,
-                            borderColor: '#fff'
-                        }]
-                    },
-                    options: {
-                        indexAxis: 'y',
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: { x: { ticks: { stepSize: 1 }, grid: { display: false } } }
+            // Market Analysis Chart - Wait for Chart.js to load
+            const initChart = () => {
+                if (typeof Chart !== 'undefined') {
+                    const ctxBottles = document.getElementById('bottleComparisonChart');
+                    if(ctxBottles) {
+                        new Chart(ctxBottles.getContext('2d'), {
+                            type: 'bar',
+                            data: {
+                                labels: ['G.O.A.T Aqua Lab', 'แบรนด์ไทยอื่นๆ', 'Seach**', 'AD*'],
+                                datasets: [{
+                                    label: 'จำนวนขวดที่ต้องซื้อ',
+                                    data: [1, 2, 3, 3],
+                                    backgroundColor: ['#22c55e', '#f59e0b', '#3b82f6', '#1e293b'],
+                                    borderRadius: 4,
+                                    borderWidth: 2,
+                                    borderColor: '#fff'
+                                }]
+                            },
+                            options: {
+                                indexAxis: 'y',
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: { legend: { display: false } },
+                                scales: { x: { ticks: { stepSize: 1 }, grid: { display: false } } }
+                            }
+                        });
                     }
-                });
-            }
+                } else {
+                    // Chart.js not loaded yet, try again in 100ms
+                    setTimeout(initChart, 100);
+                }
+            };
+            
+            // Initialize chart
+            initChart();
         });
     </script>
     <!-- Minimal Cookie Consent Banner -->
